@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E5190FB72DB9572200FE7974 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E5190FB62DB9572200FE7974 /* SnapKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		E53771662DB94F8E00E932D0 /* TVING_Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVING_Clone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5190FB72DB9572200FE7974 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 			);
 			name = TVING_Clone;
 			packageProductDependencies = (
+				E5190FB62DB9572200FE7974 /* SnapKit */,
 			);
 			productName = TVING_Clone;
 			productReference = E53771662DB94F8E00E932D0 /* TVING_Clone.app */;
@@ -107,6 +113,9 @@
 			);
 			mainGroup = E537715D2DB94F8E00E932D0;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E5190FB52DB9572200FE7974 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E53771672DB94F8E00E932D0 /* Products */;
 			projectDirPath = "";
@@ -331,6 +340,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E5190FB52DB9572200FE7974 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E5190FB62DB9572200FE7974 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5190FB52DB9572200FE7974 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E537715E2DB94F8E00E932D0 /* Project object */;
 }
