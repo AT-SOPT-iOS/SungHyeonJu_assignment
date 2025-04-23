@@ -79,7 +79,7 @@ public final class BoxButton: UIButton, AppButtonProtocol {
         case .outline:
             backgroundColor = .clear
             setTitleColor(.lightGray, for: .normal)
-            layer.borderColor = UIColor.lightGray.cgColor
+            layer.borderColor = UIColor.gray4.cgColor
             layer.borderWidth = 1
         }
     }
