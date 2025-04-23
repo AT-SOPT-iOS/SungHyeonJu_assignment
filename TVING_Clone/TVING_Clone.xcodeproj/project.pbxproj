@@ -14,6 +14,7 @@
 		E5190FDA2DB957F400FE7974 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5190FD02DB957F400FE7974 /* SceneDelegate.swift */; };
 		E5190FDB2DB957F400FE7974 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5190FD42DB957F400FE7974 /* ViewController.swift */; };
 		E5190FE72DB95A9300FE7974 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5190FE62DB95A9300FE7974 /* UIColor+.swift */; };
+		E5190FED2DB95D8F00FE7974 /* BoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5190FEC2DB95D8F00FE7974 /* BoxButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E5190FD32DB957F400FE7974 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5190FD42DB957F400FE7974 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E5190FE62DB95A9300FE7974 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		E5190FEC2DB95D8F00FE7974 /* BoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxButton.swift; sourceTree = "<group>"; };
 		E53771662DB94F8E00E932D0 /* TVING_Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVING_Clone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -105,6 +107,7 @@
 		E5190FE22DB9594900FE7974 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				E5190FEC2DB95D8F00FE7974 /* BoxButton.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5190FED2DB95D8F00FE7974 /* BoxButton.swift in Sources */,
 				E5190FD92DB957F400FE7974 /* AppDelegate.swift in Sources */,
 				E5190FE72DB95A9300FE7974 /* UIColor+.swift in Sources */,
 				E5190FDA2DB957F400FE7974 /* SceneDelegate.swift in Sources */,
