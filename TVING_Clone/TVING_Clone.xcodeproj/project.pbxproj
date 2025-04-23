@@ -21,6 +21,7 @@
 		E5190FF62DB96B5100FE7974 /* HorizontalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5190FF52DB96B5100FE7974 /* HorizontalStackView.swift */; };
 		E5190FF82DB96EA600FE7974 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5190FF72DB96EA600FE7974 /* TextField.swift */; };
 		E5190FFA2DB96EE900FE7974 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5190FF92DB96EE900FE7974 /* UITextField+.swift */; };
+		E5190FFD2DB973DF00FE7974 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = E5190FFC2DB973DF00FE7974 /* Then */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5190FB72DB9572200FE7974 /* SnapKit in Frameworks */,
+				E5190FFD2DB973DF00FE7974 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +182,7 @@
 			name = TVING_Clone;
 			packageProductDependencies = (
 				E5190FB62DB9572200FE7974 /* SnapKit */,
+				E5190FFC2DB973DF00FE7974 /* Then */,
 			);
 			productName = TVING_Clone;
 			productReference = E53771662DB94F8E00E932D0 /* TVING_Clone.app */;
@@ -211,6 +214,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				E5190FB52DB9572200FE7974 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				E5190FFB2DB973DF00FE7974 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E53771672DB94F8E00E932D0 /* Products */;
@@ -470,6 +474,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		E5190FFB2DB973DF00FE7974 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -477,6 +489,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E5190FB52DB9572200FE7974 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		E5190FFC2DB973DF00FE7974 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5190FFB2DB973DF00FE7974 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
