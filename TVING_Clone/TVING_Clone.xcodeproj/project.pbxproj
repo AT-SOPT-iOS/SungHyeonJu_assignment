@@ -16,6 +16,7 @@
 		E5190FE72DB95A9300FE7974 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5190FE62DB95A9300FE7974 /* UIColor+.swift */; };
 		E5190FED2DB95D8F00FE7974 /* BoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5190FEC2DB95D8F00FE7974 /* BoxButton.swift */; };
 		E5190FEF2DB960EB00FE7974 /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5190FEE2DB960EB00FE7974 /* TextButton.swift */; };
+		E5190FF22DB9635200FE7974 /* AppButtonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5190FF12DB9635200FE7974 /* AppButtonProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E5190FE62DB95A9300FE7974 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		E5190FEC2DB95D8F00FE7974 /* BoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxButton.swift; sourceTree = "<group>"; };
 		E5190FEE2DB960EB00FE7974 /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
+		E5190FF12DB9635200FE7974 /* AppButtonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButtonProtocol.swift; sourceTree = "<group>"; };
 		E53771662DB94F8E00E932D0 /* TVING_Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVING_Clone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -109,8 +111,7 @@
 		E5190FE22DB9594900FE7974 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				E5190FEC2DB95D8F00FE7974 /* BoxButton.swift */,
-				E5190FEE2DB960EB00FE7974 /* TextButton.swift */,
+				E5190FF02DB9633700FE7974 /* Button */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -121,6 +122,16 @@
 				E5190FE62DB95A9300FE7974 /* UIColor+.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		E5190FF02DB9633700FE7974 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				E5190FF12DB9635200FE7974 /* AppButtonProtocol.swift */,
+				E5190FEC2DB95D8F00FE7974 /* BoxButton.swift */,
+				E5190FEE2DB960EB00FE7974 /* TextButton.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 		E537715D2DB94F8E00E932D0 = {
@@ -217,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5190FEF2DB960EB00FE7974 /* TextButton.swift in Sources */,
+				E5190FF22DB9635200FE7974 /* AppButtonProtocol.swift in Sources */,
 				E5190FED2DB95D8F00FE7974 /* BoxButton.swift in Sources */,
 				E5190FD92DB957F400FE7974 /* AppDelegate.swift in Sources */,
 				E5190FE72DB95A9300FE7974 /* UIColor+.swift in Sources */,

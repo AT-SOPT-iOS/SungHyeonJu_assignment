@@ -21,7 +21,6 @@ final class ViewController: UIViewController {
         view.addSubview(textButton)
 
 
-
         loginButton.snp.makeConstraints {
             $0.center.equalToSuperview()
             $0.horizontalEdges.equalToSuperview().inset(20)

@@ -7,26 +7,39 @@
 
 import UIKit
 
-public final class TextButton: UIButton {
+public final class TextButton: UIButton, AppButtonProtocol {
 
     // MARK: - 스타일 타입
-    public enum Style {
+    public enum TextButtonType {
         case secondary   // 일반 진한 회색 텍스트
         case tertiary    // 흐릿한 안내 텍스트
         case link        // 밑줄 강조된 텍스트
     }
 
     // MARK: - Properties
-    public var style: Style = .secondary {
+    public var style: TextButtonType = .secondary {
         didSet {
             setUI()
         }
     }
 
+    public var isDisabled: Bool = false {
+        didSet {
+            isEnabled = !isDisabled
+        }
+    }
+
+    public var text: String? {
+        didSet {
+            setTitle(text, for: .normal)
+            setUI()
+        }
+    }
+
     // MARK: - Init
-    public init(title: String, style: Style = .secondary) {
+    public init(title: String, style: TextButtonType = .secondary) {
         super.init(frame: .zero)
-        self.setTitle(title, for: .normal)
+        self.text = title
         self.style = style
         setup()
     }
@@ -39,6 +52,7 @@ public final class TextButton: UIButton {
     private func setup() {
         titleLabel?.font = UIFont.systemFont(ofSize: 14)
         contentHorizontalAlignment = .center
+        setTitle(text, for: .normal)
         setUI()
     }
 
