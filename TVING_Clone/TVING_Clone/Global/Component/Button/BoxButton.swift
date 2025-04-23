@@ -7,19 +7,17 @@
 
 import UIKit
 
-public final class BoxButton: UIButton {
+public final class BoxButton: UIButton, AppButtonProtocol {
 
-    // MARK: - Button Type Enum
-
-    public enum ButtonStyle {
+    // MARK: - type
+    public enum BoxButtonType {
         case filled
         case outline
-        case disabled
     }
 
-    // MARK: - Public Properties
+    // MARK: - public interface
 
-    public var style: ButtonStyle = .filled {
+    public var style: BoxButtonType = .filled {
         didSet {
             applyStyle()
         }
@@ -31,11 +29,25 @@ public final class BoxButton: UIButton {
         }
     }
 
+    public var isDisabled: Bool = false {
+        didSet {
+            isUserInteractionEnabled = !isDisabled
+            style = isDisabled ? .outline : .filled
+        }
+    }
+
+    public var text: String? {
+        didSet {
+            setTitle(text, for: .normal)
+            applyStyle()
+        }
+    }
+
     // MARK: - Init
 
-    public init(title: String, style: ButtonStyle = .filled) {
+    public init(title: String, style: BoxButtonType = .filled) {
         super.init(frame: .zero)
-        self.setTitle(title, for: .normal)
+        self.text = title
         self.style = style
         setup()
     }
@@ -50,10 +62,11 @@ public final class BoxButton: UIButton {
         titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         layer.cornerRadius = cornerRadius
         clipsToBounds = true
+        setTitle(text, for: .normal)
         applyStyle()
     }
 
-    // MARK: - Style Logic
+    // MARK: - Style 적용
 
     private func applyStyle() {
         switch style {
@@ -61,18 +74,13 @@ public final class BoxButton: UIButton {
             backgroundColor = UIColor.systemRed
             setTitleColor(.white, for: .normal)
             layer.borderWidth = 0
+            layer.borderColor = nil
 
         case .outline:
             backgroundColor = .clear
             setTitleColor(.lightGray, for: .normal)
             layer.borderColor = UIColor.lightGray.cgColor
             layer.borderWidth = 1
-
-        case .disabled:
-            backgroundColor = UIColor.systemGray5
-            setTitleColor(.systemGray, for: .normal)
-            isUserInteractionEnabled = false
-            layer.borderWidth = 0
         }
     }
 }
