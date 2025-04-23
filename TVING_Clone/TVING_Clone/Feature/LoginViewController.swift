@@ -24,23 +24,27 @@ final class LoginViewController: BaseUIViewController {
     }
 
     private let loginButton = BoxButton().then {
-        $0.title: "로그인하기"
-        $0.style = .outline
+        $0.text =  "로그인하기"
+        $0.isDisabled = true
     }
 
-    private let findIDButton = TextButton(title: "아이디 찾기").then {
+    private let findIDButton = TextButton().then {
+        $0.text = "아이디 찾기"
         $0.style = .secondary
     }
 
-    private let findPWButton = TextButton(title: "비밀번호 찾기").then {
+    private let findPWButton = TextButton().then {
+        $0.text = "비밀번호 찾기"
         $0.style = .secondary
     }
 
-    private let signupGuideButton = TextButton(title: "아직 계정이 없으신가요?").then {
+    private let signupGuideButton = TextButton().then {
+        $0.text = "아직 계정이 없으신가요?"
         $0.style = .tertiary
     }
 
-    private let makeNicknameButton = TextButton(title: "닉네임 만들러가기").then {
+    private let makeNicknameButton = TextButton().then {
+        $0.text = "닉네임 만들러가기"
         $0.style = .link
     }
 

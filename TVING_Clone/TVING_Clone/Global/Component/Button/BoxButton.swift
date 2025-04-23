@@ -9,17 +9,16 @@ import UIKit
 
 public final class BoxButton: UIButton, AppButtonProtocol {
 
-    // MARK: - type
+    // MARK: - Type
     public enum BoxButtonType {
         case filled
         case outline
     }
 
-    // MARK: - public interface
-
+    // MARK: - Public interface
     public var style: BoxButtonType = .filled {
         didSet {
-            applyStyle()
+            setUI()
         }
     }
 
@@ -39,18 +38,16 @@ public final class BoxButton: UIButton, AppButtonProtocol {
     public var text: String? {
         didSet {
             setTitle(text, for: .normal)
-            applyStyle()
+            setUI()
         }
     }
 
     // MARK: - Init
 
-    public init(title: String, style: BoxButtonType = .filled) {
-        super.init(frame: .zero)
-        self.text = title
-        self.style = style
-        setup()
-    }
+    public init() {
+         super.init(frame: .zero)
+         setup()
+     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -63,12 +60,12 @@ public final class BoxButton: UIButton, AppButtonProtocol {
         layer.cornerRadius = cornerRadius
         clipsToBounds = true
         setTitle(text, for: .normal)
-        applyStyle()
+        setUI()
     }
 
-    // MARK: - Style 적용
+    // MARK: - setUI
 
-    private func applyStyle() {
+    private func setUI() {
         switch style {
         case .filled:
             backgroundColor = UIColor.systemRed
