@@ -9,14 +9,15 @@ import UIKit
 
 public final class TextButton: UIButton, AppButtonProtocol {
 
-    // MARK: - 스타일 타입
+    // MARK: - Type
     public enum TextButtonType {
         case secondary   // 일반 진한 회색 텍스트
         case tertiary    // 흐릿한 안내 텍스트
         case link        // 밑줄 강조된 텍스트
     }
 
-    // MARK: - Properties
+    // MARK: - Public interface
+
     public var style: TextButtonType = .secondary {
         didSet {
             setUI()
@@ -37,10 +38,8 @@ public final class TextButton: UIButton, AppButtonProtocol {
     }
 
     // MARK: - Init
-    public init(title: String, style: TextButtonType = .secondary) {
+    public init() {
         super.init(frame: .zero)
-        self.text = title
-        self.style = style
         setup()
     }
 
@@ -57,6 +56,7 @@ public final class TextButton: UIButton, AppButtonProtocol {
     }
 
     // MARK: - setUI
+
     private func setUI() {
         backgroundColor = .clear
 
@@ -76,8 +76,10 @@ public final class TextButton: UIButton, AppButtonProtocol {
             underlineTitle()
         }
     }
+}
 
-    // MARK: - underline 처리
+// MARK: - underline 처리
+extension TextButton {
     private func underlineTitle() {
         guard let currentTitle = title( for: .normal) else { return }
         let attributed = NSAttributedString(string: currentTitle, attributes: [
