@@ -19,6 +19,8 @@
 		E5190FF22DB9635200FE7974 /* AppButtonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5190FF12DB9635200FE7974 /* AppButtonProtocol.swift */; };
 		E5190FF42DB9663A00FE7974 /* BaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5190FF32DB9663A00FE7974 /* BaseUIViewController.swift */; };
 		E5190FF62DB96B5100FE7974 /* HorizontalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5190FF52DB96B5100FE7974 /* HorizontalStackView.swift */; };
+		E5190FF82DB96EA600FE7974 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5190FF72DB96EA600FE7974 /* TextField.swift */; };
+		E5190FFA2DB96EE900FE7974 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5190FF92DB96EE900FE7974 /* UITextField+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		E5190FF12DB9635200FE7974 /* AppButtonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButtonProtocol.swift; sourceTree = "<group>"; };
 		E5190FF32DB9663A00FE7974 /* BaseUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIViewController.swift; sourceTree = "<group>"; };
 		E5190FF52DB96B5100FE7974 /* HorizontalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalStackView.swift; sourceTree = "<group>"; };
+		E5190FF72DB96EA600FE7974 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		E5190FF92DB96EE900FE7974 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		E53771662DB94F8E00E932D0 /* TVING_Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVING_Clone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -116,8 +120,9 @@
 		E5190FE22DB9594900FE7974 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				E5190FF02DB9633700FE7974 /* Button */,
+				E5190FF72DB96EA600FE7974 /* TextField.swift */,
 				E5190FF52DB96B5100FE7974 /* HorizontalStackView.swift */,
+				E5190FF02DB9633700FE7974 /* Button */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				E5190FE62DB95A9300FE7974 /* UIColor+.swift */,
+				E5190FF92DB96EE900FE7974 /* UITextField+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -236,12 +242,14 @@
 				E5190FEF2DB960EB00FE7974 /* TextButton.swift in Sources */,
 				E5190FF22DB9635200FE7974 /* AppButtonProtocol.swift in Sources */,
 				E5190FED2DB95D8F00FE7974 /* BoxButton.swift in Sources */,
+				E5190FF82DB96EA600FE7974 /* TextField.swift in Sources */,
 				E5190FD92DB957F400FE7974 /* AppDelegate.swift in Sources */,
 				E5190FE72DB95A9300FE7974 /* UIColor+.swift in Sources */,
 				E5190FF42DB9663A00FE7974 /* BaseUIViewController.swift in Sources */,
 				E5190FF62DB96B5100FE7974 /* HorizontalStackView.swift in Sources */,
 				E5190FDA2DB957F400FE7974 /* SceneDelegate.swift in Sources */,
 				E5190FDB2DB957F400FE7974 /* LoginViewController.swift in Sources */,
+				E5190FFA2DB96EE900FE7974 /* UITextField+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
