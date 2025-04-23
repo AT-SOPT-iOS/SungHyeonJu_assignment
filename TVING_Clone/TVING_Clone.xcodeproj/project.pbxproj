@@ -13,6 +13,7 @@
 		E5190FD92DB957F400FE7974 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5190FCD2DB957F400FE7974 /* AppDelegate.swift */; };
 		E5190FDA2DB957F400FE7974 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5190FD02DB957F400FE7974 /* SceneDelegate.swift */; };
 		E5190FDB2DB957F400FE7974 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5190FD42DB957F400FE7974 /* ViewController.swift */; };
+		E5190FE72DB95A9300FE7974 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5190FE62DB95A9300FE7974 /* UIColor+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		E5190FD22DB957F400FE7974 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5190FD32DB957F400FE7974 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5190FD42DB957F400FE7974 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E5190FE62DB95A9300FE7974 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		E53771662DB94F8E00E932D0 /* TVING_Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVING_Clone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -61,9 +63,9 @@
 		E5190FDC2DB9580B00FE7974 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				E5190FE52DB95A8200FE7974 /* Extension */,
 				E5190FE22DB9594900FE7974 /* Component */,
 				E5190FE12DB9594100FE7974 /* Base */,
-				E5190FE02DB9592400FE7974 /* Extension */,
 				E5190FDE2DB9583F00FE7974 /* Resources */,
 				E5190FDF2DB9584F00FE7974 /* Literals */,
 			);
@@ -93,13 +95,6 @@
 			path = Literals;
 			sourceTree = "<group>";
 		};
-		E5190FE02DB9592400FE7974 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
 		E5190FE12DB9594100FE7974 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +107,14 @@
 			children = (
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		E5190FE52DB95A8200FE7974 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E5190FE62DB95A9300FE7974 /* UIColor+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		E537715D2DB94F8E00E932D0 = {
@@ -208,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5190FD92DB957F400FE7974 /* AppDelegate.swift in Sources */,
+				E5190FE72DB95A9300FE7974 /* UIColor+.swift in Sources */,
 				E5190FDA2DB957F400FE7974 /* SceneDelegate.swift in Sources */,
 				E5190FDB2DB957F400FE7974 /* ViewController.swift in Sources */,
 			);
