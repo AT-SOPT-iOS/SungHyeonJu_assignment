@@ -7,39 +7,46 @@
 
 import UIKit
 import SnapKit
+import Then
 
 final class LoginViewController: BaseUIViewController {
 
     // MARK: - UI Components
-    private let idTextField: TextField = {
-        let textField = TextField()
-        textField.placeholder = "아이디"
-        textField.setPlaceholder(color: .gray2)
-        return textField
-    }()
-    
-    private let pwTextField: TextField = {
-        let textField = TextField()
-        textField.placeholder = "비밀번호"
-        textField.setPlaceholder(color: .gray2)
-        return textField
-    }()
 
-    private let loginButton = BoxButton(title: "로그인하기", style: .outline)
+    private let idTextField = TextField().then {
+        $0.placeholder = "아이디"
+        $0.setPlaceholder(color: .gray2)
+    }
 
-    private let findIDButton = TextButton(title: "아이디 찾기", style: .secondary)
-    private let findPWButton = TextButton(title: "비밀번호 찾기", style: .secondary)
+    private let pwTextField = TextField().then {
+        $0.placeholder = "비밀번호"
+        $0.setPlaceholder(color: .gray2)
+    }
 
-    private let signupGuideButton = TextButton(title: "아직 계정이 없으신가요?", style: .tertiary)
-    private let makeNicknameButton = TextButton(title: "닉네임 만들러가기", style: .link)
+    private let loginButton = BoxButton().then {
+        $0.title: "로그인하기"
+        $0.style = .outline
+    }
 
+    private let findIDButton = TextButton(title: "아이디 찾기").then {
+        $0.style = .secondary
+    }
 
-    private let separatorView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .systemGray3
-        view.snp.makeConstraints { $0.width.equalTo(1); $0.height.equalTo(12) }
-        return view
-    }()
+    private let findPWButton = TextButton(title: "비밀번호 찾기").then {
+        $0.style = .secondary
+    }
+
+    private let signupGuideButton = TextButton(title: "아직 계정이 없으신가요?").then {
+        $0.style = .tertiary
+    }
+
+    private let makeNicknameButton = TextButton(title: "닉네임 만들러가기").then {
+        $0.style = .link
+    }
+
+    private let separatorView = UIView().then {
+        $0.backgroundColor = .systemGray3
+    }
 
     private lazy var findAccountStack = HorizontalStackView(
         views: [findIDButton, separatorView, findPWButton],
@@ -60,6 +67,10 @@ final class LoginViewController: BaseUIViewController {
 
     override func setLayout() {
 
+        separatorView.snp.makeConstraints {
+            $0.width.equalTo(1)
+            $0.height.equalTo(12)
+        }
         idTextField.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(40)
             $0.horizontalEdges.equalToSuperview().inset(20)
@@ -71,7 +82,7 @@ final class LoginViewController: BaseUIViewController {
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.height.equalTo(52)
         }
-        
+
         loginButton.snp.makeConstraints {
             $0.top.equalTo(pwTextField.snp.bottom).offset(21)
             $0.horizontalEdges.equalToSuperview().inset(20)
