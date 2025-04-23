@@ -63,12 +63,12 @@ public final class TextButton: UIButton, AppButtonProtocol {
         switch style {
         case .secondary:
             titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-            setTitleColor(.label, for: .normal)
+            setTitleColor(.gray2, for: .normal)
             setAttributedTitle(nil, for: .normal)
 
         case .tertiary:
             titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-            setTitleColor(.systemGray, for: .normal)
+            setTitleColor(.gray3, for: .normal)
             setAttributedTitle(nil, for: .normal)
 
         case .link:
@@ -79,7 +79,7 @@ public final class TextButton: UIButton, AppButtonProtocol {
 
     // MARK: - underline 처리
     private func underlineTitle() {
-        guard let currentTitle = title(for: .normal) else { return }
+        guard let currentTitle = title( for: .normal) else { return }
         let attributed = NSAttributedString(string: currentTitle, attributes: [
             .underlineStyle: NSUnderlineStyle.single.rawValue,
             .foregroundColor: titleColor(for: .normal) ?? UIColor.label
