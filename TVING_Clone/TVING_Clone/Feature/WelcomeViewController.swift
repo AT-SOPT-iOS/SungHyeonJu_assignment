@@ -79,7 +79,7 @@ final class WelcomeViewController: BaseUIViewController {
     //MARK: - PrivateMethod
     private func bindData() {
         let displayName = (nickName?.isEmpty == false ? nickName : email) ?? "???"
-        self.welcomeLabel.text = "\(displayName)님\n반가워요!"
+        self.welcomeLabel.text = "\(displayName) 님 \n반가워요!"
     }
 
     //MARK: - HelperMethod
