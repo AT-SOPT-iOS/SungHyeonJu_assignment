@@ -11,6 +11,7 @@ public enum ValidationType {
     case nonEmpty
     case email
     case minLength(Int)
+    case koreanOnly
 
     func validate(_ text: String?) -> Bool {
         guard let text = text else { return false }
@@ -23,6 +24,9 @@ public enum ValidationType {
             return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: text)
         case .minLength(let length):
             return text.count >= length
+        case .koreanOnly:
+            let regex = "^[가-힣]+$"
+            return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: text)
         }
     }
 }
