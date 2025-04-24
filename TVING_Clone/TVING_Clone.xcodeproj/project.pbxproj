@@ -26,6 +26,8 @@
 		E51910012DB9D1C200FE7974 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51910002DB9D1C200FE7974 /* UIViewController+.swift */; };
 		E51910032DB9DF9400FE7974 /* ValidationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51910022DB9DF9400FE7974 /* ValidationType.swift */; };
 		E51910062DB9DFF100FE7974 /* AppTextFieldProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51910052DB9DFF100FE7974 /* AppTextFieldProtocol.swift */; };
+		E51910082DB9E62F00FE7974 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51910072DB9E62F00FE7974 /* WelcomeViewController.swift */; };
+		E519100A2DB9E84900FE7974 /* SetNickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51910092DB9E84900FE7974 /* SetNickNameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		E51910002DB9D1C200FE7974 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		E51910022DB9DF9400FE7974 /* ValidationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationType.swift; sourceTree = "<group>"; };
 		E51910052DB9DFF100FE7974 /* AppTextFieldProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextFieldProtocol.swift; sourceTree = "<group>"; };
+		E51910072DB9E62F00FE7974 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		E51910092DB9E84900FE7974 /* SetNickNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNickNameViewController.swift; sourceTree = "<group>"; };
 		E53771662DB94F8E00E932D0 /* TVING_Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVING_Clone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -99,6 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				E5190FD42DB957F400FE7974 /* LoginViewController.swift */,
+				E51910072DB9E62F00FE7974 /* WelcomeViewController.swift */,
+				E51910092DB9E84900FE7974 /* SetNickNameViewController.swift */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -264,9 +270,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E51910032DB9DF9400FE7974 /* ValidationType.swift in Sources */,
+				E51910082DB9E62F00FE7974 /* WelcomeViewController.swift in Sources */,
 				E5190FEF2DB960EB00FE7974 /* TextButton.swift in Sources */,
 				E5190FFF2DB9CA7600FE7974 /* ImageLiterals.swift in Sources */,
 				E5190FF22DB9635200FE7974 /* AppButtonProtocol.swift in Sources */,
+				E519100A2DB9E84900FE7974 /* SetNickNameViewController.swift in Sources */,
 				E5190FED2DB95D8F00FE7974 /* BoxButton.swift in Sources */,
 				E5190FF82DB96EA600FE7974 /* TextField.swift in Sources */,
 				E5190FD92DB957F400FE7974 /* AppDelegate.swift in Sources */,
