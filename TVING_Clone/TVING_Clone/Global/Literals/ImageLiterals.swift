@@ -13,6 +13,8 @@ enum ImageLiterals {
     static var ic_xcircle: UIImage { .load(name: "ic_xcircle")}
     static var ic_eyeSlash: UIImage { .load(name: "ic_eyeSlash")}
 
+    // MARK: Logo
+    static var tvingLogo: UIImage { .load(name: "tvingLogo")}
 }
 
 extension UIImage {
