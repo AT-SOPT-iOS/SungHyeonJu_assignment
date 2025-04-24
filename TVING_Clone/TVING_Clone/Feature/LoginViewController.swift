@@ -13,6 +13,7 @@ final class LoginViewController: BaseUIViewController {
 
     // MARK: - Properties
 
+    private var nickName: String?
 
     // MARK: - UI Components
 
@@ -131,6 +132,7 @@ final class LoginViewController: BaseUIViewController {
     @objc
     private func loginButtonDidTap() {
         let welcomeVC = WelcomeViewController()
+        welcomeVC.dataBind(email: idTextField.text, nickName: nickName)
         navigationController?.pushViewController(welcomeVC, animated: true)
     }
 
@@ -138,7 +140,7 @@ final class LoginViewController: BaseUIViewController {
     private func makeNicknameButtonDidTap() {
         let nicknameVC = SetNickNameViewController()
         nicknameVC.modalPresentationStyle = .pageSheet
-
+        nicknameVC.delegate = self
         if let sheet = nicknameVC.sheetPresentationController {
             sheet.detents = [.medium()]
             sheet.prefersGrabberVisible = true
@@ -146,12 +148,18 @@ final class LoginViewController: BaseUIViewController {
         present(nicknameVC, animated: true, completion: nil)
     }
 
-
 }
 
 extension LoginViewController : TextFieldValidatingDelegate {
     func textFieldValidityDidChange() {
         let fields = [idTextField, pwTextField]
         loginButton.isDisabled = !fields.allSatisfy { $0.isValid }
+    }
+}
+
+extension LoginViewController: NickNameBindDelegate {
+    func nickNameBind(nickName: String) {
+        self.nickName = nickName
+        print("닉네임 전달받음: \(nickName)")
     }
 }

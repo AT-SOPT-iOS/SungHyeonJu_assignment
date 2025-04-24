@@ -7,9 +7,14 @@
 
 import UIKit
 
+protocol NickNameBindDelegate: AnyObject {
+    func nickNameBind(nickName: String)
+}
+
 final class SetNickNameViewController: BaseUIViewController {
 
     // MARK: - Properties
+    weak var delegate : NickNameBindDelegate?
 
     // MARK: - UIComponent
 
@@ -28,7 +33,7 @@ final class SetNickNameViewController: BaseUIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
+
     }
 
     //MARK: - Custom Method
@@ -42,6 +47,10 @@ final class SetNickNameViewController: BaseUIViewController {
         nickNameTextField.validationDelegate = self
     }
 
+    override func addTarget() {
+        saveButton.addTarget(self, action: #selector(saveButtonDidTap), for: .touchUpInside)
+    }
+    
     override func setLayout() {
         nickNameTextField.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(80)
@@ -56,9 +65,16 @@ final class SetNickNameViewController: BaseUIViewController {
         }
     }
 
-    //MARK: - PrivateMethod
+    //MARK: - ActionMethod
 
-    //MARK: - HelperMethod
+    @objc
+    private func saveButtonDidTap() {
+        guard let nickname = nickNameTextField.text, !nickname.isEmpty else { return }
+        delegate?.nickNameBind(nickName: nickname)
+        dismiss(animated: true)
+    }
+
+    //MARK: - PrivateMethod
 
 }
 

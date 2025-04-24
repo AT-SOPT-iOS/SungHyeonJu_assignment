@@ -18,7 +18,6 @@ final class WelcomeViewController: BaseUIViewController {
 
     private let welcomeLabel = UILabel().then {
         $0.textColor = .white
-        $0.text = "환영합니다."
         $0.textAlignment = .center
         $0.numberOfLines = 2
         $0.font = UIFont.systemFont(ofSize: 24, weight: .bold)
@@ -38,6 +37,7 @@ final class WelcomeViewController: BaseUIViewController {
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindData()
     }
 
     //MARK: - Custom Method
@@ -70,9 +70,16 @@ final class WelcomeViewController: BaseUIViewController {
 
 
     //MARK: - PrivateMethod
+    private func bindData() {
+        let displayName = (nickName?.isEmpty == false ? nickName : email) ?? "???"
+        self.welcomeLabel.text = "\(displayName)님\n반가워요!"
+    }
 
     //MARK: - HelperMethod
-
+    public func dataBind(email: String?, nickName: String?){
+            self.email = email
+        self.nickName = nickName
+        }
 }
 
 
