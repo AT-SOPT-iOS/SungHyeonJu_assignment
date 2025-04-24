@@ -24,6 +24,8 @@ class BaseUIViewController: UIViewController {
         setLayout()
         addTarget()
         setDelegate()
+
+        hideKeyboardWhenTappedAround
     }
 
     // MARK: - Custom Method
