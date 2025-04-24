@@ -17,15 +17,22 @@ final class SetNickNameViewController: BaseUIViewController {
     weak var delegate : NickNameBindDelegate?
 
     // MARK: - UIComponent
+    private let welcomeLabel = UILabel().then {
+        $0.textColor = .black
+        $0.textAlignment = .center
+        $0.text = "닉네임을 입력해주세요."
+        $0.numberOfLines = 2
+        $0.font = UIFont.systemFont(ofSize: 23, weight: .regular)
+    }
 
     private let nickNameTextField = TextField().then {
-        $0.placeholder = "닉네임을 입력해주세요."
+        $0.placeholder = "닉네임"
         $0.setPlaceholder(color: .gray2)
         $0.validationType = [.nonEmpty]
     }
 
     private let saveButton = BoxButton().then {
-        $0.text =  "로그인하기"
+        $0.text =  "저장하기"
         $0.isDisabled = true
     }
 
@@ -39,7 +46,7 @@ final class SetNickNameViewController: BaseUIViewController {
     //MARK: - Custom Method
 
     override func setUI() {
-        [nickNameTextField, saveButton]
+        [welcomeLabel,nickNameTextField, saveButton]
             .forEach { view.addSubview($0) }
     }
 
@@ -52,8 +59,14 @@ final class SetNickNameViewController: BaseUIViewController {
     }
     
     override func setLayout() {
+
+        welcomeLabel.snp.makeConstraints {
+            $0.leading.equalToSuperview().inset(20)
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(45)
+        }
+
         nickNameTextField.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).offset(80)
+            $0.top.equalTo(welcomeLabel.snp.bottom).offset(21)
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.height.equalTo(52)
         }
