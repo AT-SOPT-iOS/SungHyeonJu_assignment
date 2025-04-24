@@ -90,7 +90,7 @@ final class TextField: UITextField, AppTextFieldProtocol {
 
     // MARK: - UI Config
     private func configureUI() {
-        font = .systemFont(ofSize: 15, weight: .medium)
+        font = .textField
         textColor = .gray2
         backgroundColor = .gray4
         layer.cornerRadius = 3

@@ -68,7 +68,7 @@ public final class BoxButton: UIButton, AppButtonProtocol {
     private func setUI() {
         switch style {
         case .filled:
-            backgroundColor = UIColor.systemRed
+            backgroundColor = .tvingRed
             setTitleColor(.white, for: .normal)
             layer.borderWidth = 0
             layer.borderColor = nil

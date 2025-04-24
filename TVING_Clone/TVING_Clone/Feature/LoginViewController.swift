@@ -33,7 +33,7 @@ final class LoginViewController: BaseUIViewController {
     private let pwTextField = TextField().then {
         $0.textFieldPlaceholder = "비밀번호"
         $0.type = .password
-        $0.validationType = [.nonEmpty]
+        $0.validationType = [.nonEmpty, .minLength(10)]
     }
 
     private let loginButton = BoxButton().then {

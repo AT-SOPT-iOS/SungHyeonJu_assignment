@@ -27,11 +27,15 @@ final class SetNickNameViewController: BaseUIViewController {
 
     private let nickNameTextField = TextField().then {
         $0.textFieldPlaceholder = "닉네임"
+        $0.setPlaceholder(color: .white)
+        $0.backgroundColor = .gray2
+        $0.textColor = .black
         $0.validationType = [.koreanOnly]
     }
 
     private let saveButton = BoxButton().then {
         $0.text =  "저장하기"
+        $0.cornerRadius = 12
         $0.isDisabled = true
     }
 
