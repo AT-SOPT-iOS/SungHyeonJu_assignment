@@ -28,7 +28,7 @@ final class SetNickNameViewController: BaseUIViewController {
     private let nickNameTextField = TextField().then {
         $0.placeholder = "닉네임"
         $0.setPlaceholder(color: .gray2)
-        $0.validationType = [.nonEmpty]
+        $0.validationType = [.koreanOnly]
     }
 
     private let saveButton = BoxButton().then {
