@@ -25,7 +25,7 @@ public enum ValidationType {
         case .minLength(let length):
             return text.count >= length
         case .koreanOnly:
-            let regex = "^[가-힣]+$"
+            let regex = "^[가-힣ㄱ-ㅎㅏ-ㅣ]+$"
             return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: text)
         }
     }
