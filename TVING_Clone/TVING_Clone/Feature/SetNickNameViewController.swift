@@ -22,7 +22,7 @@ final class SetNickNameViewController: BaseUIViewController {
         $0.textAlignment = .center
         $0.text = "닉네임을 입력해주세요."
         $0.numberOfLines = 2
-        $0.font = UIFont.systemFont(ofSize: 23, weight: .regular)
+        $0.font = .head1
     }
 
     private let nickNameTextField = TextField().then {
