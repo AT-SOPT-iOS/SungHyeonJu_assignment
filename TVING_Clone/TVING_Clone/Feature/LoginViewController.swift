@@ -17,10 +17,18 @@ final class LoginViewController: BaseUIViewController {
 
     // MARK: - UI Components
 
+    private let welcomeLabel = UILabel().then {
+        $0.textColor = .white
+        $0.textAlignment = .center
+        $0.text = "TVING ID 로그인"
+        $0.numberOfLines = 2
+        $0.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+    }
+
     private let idTextField = TextField().then {
         $0.placeholder = "아이디"
         $0.setPlaceholder(color: .gray2)
-        $0.validationType = [.nonEmpty]
+        $0.validationType = [.email]
     }
 
     private let pwTextField = TextField().then {
@@ -78,7 +86,7 @@ final class LoginViewController: BaseUIViewController {
     // MARK: - Custom Method
 
     override func setUI() {
-        [idTextField, pwTextField, loginButton, findAccountStack, signupStack]
+        [welcomeLabel,idTextField, pwTextField, loginButton, findAccountStack, signupStack]
             .forEach { view.addSubview($0) }
     }
 
@@ -89,12 +97,19 @@ final class LoginViewController: BaseUIViewController {
     }
 
     override func setLayout() {
+
+        welcomeLabel.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(90)
+        }
+
         separatorView.snp.makeConstraints {
             $0.width.equalTo(1)
             $0.height.equalTo(12)
         }
+
         idTextField.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).offset(40)
+            $0.top.equalTo(welcomeLabel.snp.bottom).offset(31)
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.height.equalTo(52)
         }
