@@ -21,6 +21,7 @@ final class LoginViewController: BaseUIViewController {
     private let pwTextField = TextField().then {
         $0.placeholder = "비밀번호"
         $0.setPlaceholder(color: .gray2)
+        $0.type = .password
     }
 
     private let loginButton = BoxButton().then {
