@@ -20,7 +20,7 @@ final class TextField: UITextField {
         case password
     }
 
-    // MARK: - Public
+    // MARK: - Public Interface
     public var type: FieldType = .normal {
         didSet { configureFieldType() }
     }
@@ -93,10 +93,15 @@ final class TextField: UITextField {
 
     private func configureFieldType() {
         rightStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
-        isSecureTextEntry = (type == .password)
 
-        rightStackView.addArrangedSubview(clearButton)
-        if type == .password {
+        switch type {
+        case .normal:
+            isSecureTextEntry = false
+            rightStackView.addArrangedSubview(clearButton)
+
+        case .password:
+            isSecureTextEntry = isSecure
+            rightStackView.addArrangedSubview(clearButton)
             rightStackView.addArrangedSubview(toggleButton)
         }
 

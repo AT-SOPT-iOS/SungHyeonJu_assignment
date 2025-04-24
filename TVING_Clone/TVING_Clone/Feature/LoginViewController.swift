@@ -11,6 +11,9 @@ import Then
 
 final class LoginViewController: BaseUIViewController {
 
+    // MARK: - Properties
+
+
     // MARK: - UI Components
 
     private let idTextField = TextField().then {
@@ -65,19 +68,26 @@ final class LoginViewController: BaseUIViewController {
         spacing: 33
     )
 
-    // MARK: - UI Setup
+    // MARK: - Life Cycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
+    // MARK: - Custom Method
 
     override func setUI() {
         [idTextField, pwTextField, loginButton, findAccountStack, signupStack]
             .forEach { view.addSubview($0) }
+    }
 
+    override func setDelegate() {
         [idTextField, pwTextField].forEach {
             $0.validationDelegate = self
         }
     }
 
     override func setLayout() {
-
         separatorView.snp.makeConstraints {
             $0.width.equalTo(1)
             $0.height.equalTo(12)
@@ -110,6 +120,33 @@ final class LoginViewController: BaseUIViewController {
             $0.centerX.equalToSuperview()
         }
     }
+
+    override func addTarget() {
+        loginButton.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
+        makeNicknameButton.addTarget(self, action: #selector(makeNicknameButtonDidTap), for: .touchUpInside)
+    }
+
+    //MARK: - ActionMethod
+
+    @objc
+    private func loginButtonDidTap() {
+        let welcomeVC = WelcomeViewController()
+        navigationController?.pushViewController(welcomeVC, animated: true)
+    }
+
+    @objc
+    private func makeNicknameButtonDidTap() {
+        let nicknameVC = SetNickNameViewController()
+        nicknameVC.modalPresentationStyle = .pageSheet
+
+        if let sheet = nicknameVC.sheetPresentationController {
+            sheet.detents = [.medium()]
+            sheet.prefersGrabberVisible = true
+        }
+        present(nicknameVC, animated: true, completion: nil)
+    }
+
+
 }
 
 extension LoginViewController : TextFieldValidatingDelegate {
