@@ -22,7 +22,7 @@ final class LoginViewController: BaseUIViewController {
         $0.textAlignment = .center
         $0.text = "TVING ID 로그인"
         $0.numberOfLines = 2
-        $0.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        $0.font = .head1
     }
 
     private let idTextField = TextField().then {

@@ -56,7 +56,7 @@ public final class BoxButton: UIButton, AppButtonProtocol {
     // MARK: - Setup
 
     private func setup() {
-        titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        titleLabel?.font = .button
         layer.cornerRadius = cornerRadius
         clipsToBounds = true
         setTitle(text, for: .normal)

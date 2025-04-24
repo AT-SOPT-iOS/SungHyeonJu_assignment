@@ -49,7 +49,7 @@ public final class TextButton: UIButton, AppButtonProtocol {
 
     // MARK: - Setup
     private func setup() {
-        titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        titleLabel?.font = .button
         contentHorizontalAlignment = .center
         setTitle(text, for: .normal)
         setUI()
@@ -62,17 +62,17 @@ public final class TextButton: UIButton, AppButtonProtocol {
 
         switch style {
         case .secondary:
-            titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+            titleLabel?.font = .button
             setTitleColor(.gray2, for: .normal)
             setAttributedTitle(nil, for: .normal)
 
         case .tertiary:
-            titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+            titleLabel?.font = .button
             setTitleColor(.gray3, for: .normal)
             setAttributedTitle(nil, for: .normal)
 
         case .link:
-            titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+            titleLabel?.font = .underlineButton
             underlineTitle()
         }
     }
