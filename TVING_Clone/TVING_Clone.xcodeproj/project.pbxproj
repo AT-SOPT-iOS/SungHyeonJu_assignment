@@ -22,6 +22,7 @@
 		E5190FF82DB96EA600FE7974 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5190FF72DB96EA600FE7974 /* TextField.swift */; };
 		E5190FFA2DB96EE900FE7974 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5190FF92DB96EE900FE7974 /* UITextField+.swift */; };
 		E5190FFD2DB973DF00FE7974 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = E5190FFC2DB973DF00FE7974 /* Then */; };
+		E5190FFF2DB9CA7600FE7974 /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5190FFE2DB9CA7600FE7974 /* ImageLiterals.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		E5190FF52DB96B5100FE7974 /* HorizontalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalStackView.swift; sourceTree = "<group>"; };
 		E5190FF72DB96EA600FE7974 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		E5190FF92DB96EE900FE7974 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		E5190FFE2DB9CA7600FE7974 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
 		E53771662DB94F8E00E932D0 /* TVING_Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVING_Clone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 		E5190FDF2DB9584F00FE7974 /* Literals */ = {
 			isa = PBXGroup;
 			children = (
+				E5190FFE2DB9CA7600FE7974 /* ImageLiterals.swift */,
 			);
 			path = Literals;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5190FEF2DB960EB00FE7974 /* TextButton.swift in Sources */,
+				E5190FFF2DB9CA7600FE7974 /* ImageLiterals.swift in Sources */,
 				E5190FF22DB9635200FE7974 /* AppButtonProtocol.swift in Sources */,
 				E5190FED2DB95D8F00FE7974 /* BoxButton.swift in Sources */,
 				E5190FF82DB96EA600FE7974 /* TextField.swift in Sources */,
