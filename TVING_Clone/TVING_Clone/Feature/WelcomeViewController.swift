@@ -10,13 +10,60 @@ import UIKit
 final class WelcomeViewController: BaseUIViewController {
 
     // MARK: - Properties
+    private var email: String?
+    private var nickName: String?
+
 
     // MARK: - UIComponent
+
+    private let welcomeLabel = UILabel().then {
+        $0.textColor = .white
+        $0.text = "환영합니다."
+        $0.textAlignment = .center
+        $0.numberOfLines = 2
+        $0.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+    }
+
+    private let tvingLogoView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = ImageLiterals.tvingLogo
+        return imageView
+    }()
+
+    private let mainButton = BoxButton().then {
+        $0.text =  "메인으로"
+        $0.isDisabled = false
+    }
 
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .red
+    }
+
+    //MARK: - Custom Method
+
+    override func setUI() {
+        [welcomeLabel, tvingLogoView, mainButton]
+            .forEach { view.addSubview($0) }
+    }
+
+    override func setLayout() {
+        tvingLogoView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.horizontalEdges.equalToSuperview()
+            $0.height.equalTo(210)
+        }
+
+        welcomeLabel.snp.makeConstraints {
+            $0.top.equalTo(tvingLogoView.snp.bottom).offset(80)
+            $0.centerX.equalToSuperview()
+        }
+
+        mainButton.snp.makeConstraints {
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(60)
+            $0.horizontalEdges.equalToSuperview().inset(20)
+            $0.height.equalTo(52)
+        }
     }
 
     //MARK: - ActionMethod

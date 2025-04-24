@@ -29,11 +29,12 @@ final class TextField: UITextField {
 
     weak var validationDelegate: TextFieldValidatingDelegate?
 
-    // MARK: - Private
+    // MARK: - Private Properties
     private let focusedBorderColor = UIColor.gray2.cgColor
     private let defaultBorderColor = UIColor.clear.cgColor
     private var isSecure: Bool = true
 
+    // MARK: - UI Components
     private let clearButton = UIButton().then {
         $0.setImage(.icXcircle, for: .normal)
         $0.tintColor = .gray2

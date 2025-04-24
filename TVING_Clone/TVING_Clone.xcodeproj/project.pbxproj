@@ -103,8 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				E5190FD42DB957F400FE7974 /* LoginViewController.swift */,
-				E51910072DB9E62F00FE7974 /* WelcomeViewController.swift */,
 				E51910092DB9E84900FE7974 /* SetNickNameViewController.swift */,
+				E51910072DB9E62F00FE7974 /* WelcomeViewController.swift */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
