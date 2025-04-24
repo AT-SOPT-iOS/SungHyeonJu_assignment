@@ -12,7 +12,7 @@ protocol TextFieldValidatingDelegate: AnyObject {
     func textFieldValidityDidChange()
 }
 
-final class TextField: UITextField {
+final class TextField: UITextField, AppTextFieldProtocol {
 
     // MARK: - Type
     public enum FieldType {
@@ -26,6 +26,21 @@ final class TextField: UITextField {
     }
 
     public var validationType: [ValidationType] = [.nonEmpty]
+
+    public var isValid: Bool {
+        return validationType.allSatisfy { $0.validate(text) }
+    }
+
+    public var textFieldPlaceholder: String? {
+        didSet {
+            super.placeholder = textFieldPlaceholder
+            attributedPlaceholder = NSAttributedString(
+                string: textFieldPlaceholder ?? "",
+                attributes: [.foregroundColor: UIColor.gray2]
+            )
+        }
+    }
+
 
     weak var validationDelegate: TextFieldValidatingDelegate?
 
@@ -145,12 +160,5 @@ final class TextField: UITextField {
 
     private func updateRightViewVisibility() {
         rightViewMode = (text?.isEmpty == false) ? .always : .never
-    }
-}
-
-// MARK: - Validating Extension
-extension TextField: AppTextFieldProtocol {
-    var isValid: Bool {
-        return validationType.allSatisfy { $0.validate(self.text) }
     }
 }
