@@ -23,6 +23,7 @@
 		E5190FFA2DB96EE900FE7974 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5190FF92DB96EE900FE7974 /* UITextField+.swift */; };
 		E5190FFD2DB973DF00FE7974 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = E5190FFC2DB973DF00FE7974 /* Then */; };
 		E5190FFF2DB9CA7600FE7974 /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5190FFE2DB9CA7600FE7974 /* ImageLiterals.swift */; };
+		E51910012DB9D1C200FE7974 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51910002DB9D1C200FE7974 /* UIViewController+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		E5190FF72DB96EA600FE7974 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		E5190FF92DB96EE900FE7974 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		E5190FFE2DB9CA7600FE7974 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
+		E51910002DB9D1C200FE7974 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		E53771662DB94F8E00E932D0 /* TVING_Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVING_Clone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -137,6 +139,7 @@
 			children = (
 				E5190FE62DB95A9300FE7974 /* UIColor+.swift */,
 				E5190FF92DB96EE900FE7974 /* UITextField+.swift */,
+				E51910002DB9D1C200FE7974 /* UIViewController+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				E5190FE72DB95A9300FE7974 /* UIColor+.swift in Sources */,
 				E5190FF42DB9663A00FE7974 /* BaseUIViewController.swift in Sources */,
 				E5190FF62DB96B5100FE7974 /* HorizontalStackView.swift in Sources */,
+				E51910012DB9D1C200FE7974 /* UIViewController+.swift in Sources */,
 				E5190FDA2DB957F400FE7974 /* SceneDelegate.swift in Sources */,
 				E5190FDB2DB957F400FE7974 /* LoginViewController.swift in Sources */,
 				E5190FFA2DB96EE900FE7974 /* UITextField+.swift in Sources */,

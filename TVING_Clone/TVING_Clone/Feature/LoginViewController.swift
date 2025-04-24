@@ -68,6 +68,10 @@ final class LoginViewController: BaseUIViewController {
     override func setUI() {
         [idTextField, pwTextField, loginButton, findAccountStack, signupStack]
             .forEach { view.addSubview($0) }
+
+        [idTextField, pwTextField].forEach {
+            $0.validationDelegate = self
+        }
     }
 
     override func setLayout() {
@@ -103,5 +107,12 @@ final class LoginViewController: BaseUIViewController {
             $0.top.equalTo(findAccountStack.snp.bottom).offset(40)
             $0.centerX.equalToSuperview()
         }
+    }
+}
+
+extension LoginViewController : TextFieldValidatingDelegate {
+    func textFieldValidityDidChange() {
+        let fields = [idTextField, pwTextField]
+        loginButton.isDisabled = !fields.allSatisfy { $0.isValid }
     }
 }

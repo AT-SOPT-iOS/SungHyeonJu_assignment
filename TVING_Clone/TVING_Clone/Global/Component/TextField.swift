@@ -8,6 +8,14 @@
 import UIKit
 import SnapKit
 
+protocol TextFieldValidating {
+    var isValid: Bool { get }
+}
+
+protocol TextFieldValidatingDelegate: AnyObject {
+    func textFieldValidityDidChange()
+}
+
 final class TextField: UITextField {
 
     // MARK: - Type
@@ -22,6 +30,8 @@ final class TextField: UITextField {
             configureFieldType()
         }
     }
+
+    weak var validationDelegate: TextFieldValidatingDelegate?
 
     // MARK: - UI Properties
     private let focusedBorderColor = UIColor.gray2.cgColor
@@ -140,10 +150,18 @@ final class TextField: UITextField {
 
     @objc private func textDidChange() {
         updateRightViewVisibility()
+        validationDelegate?.textFieldValidityDidChange()
     }
 
     // MARK: - Helper
     private func updateRightViewVisibility() {
         rightViewMode = (text?.isEmpty == false) ? .always : .never
+    }
+}
+
+
+extension TextField: TextFieldValidating {
+    var isValid: Bool {
+        return !(self.text?.isEmpty ?? true)
     }
 }
