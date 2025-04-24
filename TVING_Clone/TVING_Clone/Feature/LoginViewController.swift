@@ -16,12 +16,14 @@ final class LoginViewController: BaseUIViewController {
     private let idTextField = TextField().then {
         $0.placeholder = "아이디"
         $0.setPlaceholder(color: .gray2)
+        $0.validationType = [.email]
     }
 
     private let pwTextField = TextField().then {
         $0.placeholder = "비밀번호"
         $0.setPlaceholder(color: .gray2)
         $0.type = .password
+        $0.validationType = [.minLength(10)]
     }
 
     private let loginButton = BoxButton().then {

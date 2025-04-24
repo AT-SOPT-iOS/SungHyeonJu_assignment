@@ -8,10 +8,6 @@
 import UIKit
 import SnapKit
 
-protocol TextFieldValidating {
-    var isValid: Bool { get }
-}
-
 protocol TextFieldValidatingDelegate: AnyObject {
     func textFieldValidityDidChange()
 }
@@ -24,16 +20,16 @@ final class TextField: UITextField {
         case password
     }
 
-    // MARK: - Public Properties
+    // MARK: - Public
     public var type: FieldType = .normal {
-        didSet {
-            configureFieldType()
-        }
+        didSet { configureFieldType() }
     }
+
+    public var validationType: [ValidationType] = [.nonEmpty]
 
     weak var validationDelegate: TextFieldValidatingDelegate?
 
-    // MARK: - UI Properties
+    // MARK: - Private
     private let focusedBorderColor = UIColor.gray2.cgColor
     private let defaultBorderColor = UIColor.clear.cgColor
     private var isSecure: Bool = true
@@ -48,7 +44,7 @@ final class TextField: UITextField {
         $0.tintColor = .gray2
     }
 
-    private var rightStackView = UIStackView().then {
+    private let rightStackView = UIStackView().then {
         $0.axis = .horizontal
         $0.spacing = 8
         $0.alignment = .center
@@ -76,7 +72,7 @@ final class TextField: UITextField {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - UI Configuration
+    // MARK: - UI Config
     private func configureUI() {
         font = .systemFont(ofSize: 15, weight: .medium)
         textColor = .gray2
@@ -85,51 +81,39 @@ final class TextField: UITextField {
         layer.borderWidth = 1
         layer.borderColor = defaultBorderColor
         addLeftPadding(width: 22)
-
         autocapitalizationType = .none
         clearButtonMode = .never
         rightView = rightContainerView
     }
 
+    private func configureLayout() {
+        clearButton.snp.makeConstraints { $0.size.equalTo(20) }
+        toggleButton.snp.makeConstraints { $0.size.equalTo(20) }
+    }
+
     private func configureFieldType() {
         rightStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        isSecureTextEntry = (type == .password)
 
-        switch type {
-        case .normal:
-            isSecureTextEntry = false
-            rightStackView.addArrangedSubview(clearButton)
-        case .password:
-            isSecureTextEntry = isSecure
-            rightStackView.addArrangedSubview(clearButton)
+        rightStackView.addArrangedSubview(clearButton)
+        if type == .password {
             rightStackView.addArrangedSubview(toggleButton)
         }
 
         updateRightViewVisibility()
     }
 
-    private func configureLayout() {
-        clearButton.snp.makeConstraints {
-            $0.size.equalTo(20)
-        }
-
-        toggleButton.snp.makeConstraints {
-            $0.size.equalTo(20)
-        }
-    }
-
     // MARK: - Actions
     private func configureActions() {
         clearButton.addTarget(self, action: #selector(clearText), for: .touchUpInside)
         toggleButton.addTarget(self, action: #selector(togglePasswordVisibility), for: .touchUpInside)
-
         addTarget(self, action: #selector(editingDidBegin), for: .editingDidBegin)
         addTarget(self, action: #selector(editingDidEnd), for: .editingDidEnd)
         addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
 
-    // MARK: - Action Methods
     @objc private func clearText() {
-        self.text = ""
+        text = ""
         sendActions(for: .editingChanged)
     }
 
@@ -153,15 +137,14 @@ final class TextField: UITextField {
         validationDelegate?.textFieldValidityDidChange()
     }
 
-    // MARK: - Helper
     private func updateRightViewVisibility() {
         rightViewMode = (text?.isEmpty == false) ? .always : .never
     }
 }
 
-
-extension TextField: TextFieldValidating {
+// MARK: - Validating Extension
+extension TextField: AppTextFieldProtocol {
     var isValid: Bool {
-        return !(self.text?.isEmpty ?? true)
+        return validationType.allSatisfy { $0.validate(self.text) }
     }
 }
