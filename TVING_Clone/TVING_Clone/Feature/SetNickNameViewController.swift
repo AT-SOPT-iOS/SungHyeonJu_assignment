@@ -14,7 +14,7 @@ protocol NickNameBindDelegate: AnyObject {
 final class SetNickNameViewController: BaseUIViewController {
 
     // MARK: - Properties
-    weak var delegate : NickNameBindDelegate?
+    weak var delegate: NickNameBindDelegate?
 
     // MARK: - UIComponent
     private let welcomeLabel = UILabel().then {
@@ -39,17 +39,17 @@ final class SetNickNameViewController: BaseUIViewController {
         $0.isDisabled = true
     }
 
-    //MARK: - Life Cycle
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
 
     }
 
-    //MARK: - Custom Method
+    // MARK: - Custom Method
 
     override func setUI() {
-        [welcomeLabel,nickNameTextField, saveButton]
+        [welcomeLabel, nickNameTextField, saveButton]
             .forEach { view.addSubview($0) }
     }
 
@@ -60,7 +60,6 @@ final class SetNickNameViewController: BaseUIViewController {
     override func addTarget() {
         saveButton.addTarget(self, action: #selector(saveButtonDidTap), for: .touchUpInside)
     }
-    
     override func setLayout() {
 
         welcomeLabel.snp.makeConstraints {
@@ -81,7 +80,7 @@ final class SetNickNameViewController: BaseUIViewController {
         }
     }
 
-    //MARK: - ActionMethod
+    // MARK: - ActionMethod
 
     @objc
     private func saveButtonDidTap() {
@@ -90,16 +89,14 @@ final class SetNickNameViewController: BaseUIViewController {
         dismiss(animated: true)
     }
 
-    //MARK: - PrivateMethod
+    // MARK: - PrivateMethod
 
 }
 
-
-//MARK: - TextFieldValidatingDelegate
-extension SetNickNameViewController : TextFieldValidatingDelegate {
+// MARK: - TextFieldValidatingDelegate
+extension SetNickNameViewController: TextFieldValidatingDelegate {
     func textFieldValidityDidChange() {
         let fields = [nickNameTextField]
         saveButton.isDisabled = !fields.allSatisfy { $0.isValid }
     }
 }
-

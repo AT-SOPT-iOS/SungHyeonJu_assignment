@@ -7,7 +7,8 @@
 
 import UIKit
 
-//텍스트필드가 준수하는 프로토콜
+// 텍스트필드가 준수하는 프로토콜
+
 protocol AppTextFieldProtocol: AnyObject {
     var validationType: [ValidationType] { get set }
     var isValid: Bool { get }

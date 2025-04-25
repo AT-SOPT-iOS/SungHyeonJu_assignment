@@ -35,6 +35,7 @@
 		E519102B2DBA3F2400FE7974 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = E519102A2DBA3F2400FE7974 /* Pretendard-ExtraLight.otf */; };
 		E519102D2DBA3F2800FE7974 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = E519102C2DBA3F2800FE7974 /* Pretendard-Light.otf */; };
 		E519102F2DBA3F2C00FE7974 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = E519102E2DBA3F2C00FE7974 /* Pretendard-Medium.otf */; };
+		E56DC4992DBB5C150087DDA6 /* .swiftLint.yml in Resources */ = {isa = PBXBuildFile; fileRef = E56DC4982DBB5C150087DDA6 /* .swiftLint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		E519102C2DBA3F2800FE7974 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
 		E519102E2DBA3F2C00FE7974 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		E53771662DB94F8E00E932D0 /* TVING_Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVING_Clone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E56DC4982DBB5C150087DDA6 /* .swiftLint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftLint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				E5190FDD2DB9581A00FE7974 /* Feature */,
 				E5190FDC2DB9580B00FE7974 /* Global */,
 				E5190FD32DB957F400FE7974 /* Info.plist */,
+				E56DC4982DBB5C150087DDA6 /* .swiftLint.yml */,
 			);
 			path = TVING_Clone;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				E53771622DB94F8E00E932D0 /* Sources */,
 				E53771632DB94F8E00E932D0 /* Frameworks */,
 				E53771642DB94F8E00E932D0 /* Resources */,
+				E56DC4972DBB5B600087DDA6 /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -294,10 +298,33 @@
 				E519102D2DBA3F2800FE7974 /* Pretendard-Light.otf in Resources */,
 				E51910252DBA3F1400FE7974 /* Pretendard-Black.otf in Resources */,
 				E5190FD72DB957F400FE7974 /* Assets.xcassets in Resources */,
+				E56DC4992DBB5C150087DDA6 /* .swiftLint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E56DC4972DBB5B600087DDA6 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n \nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E53771622DB94F8E00E932D0 /* Sources */ = {
@@ -346,6 +373,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TVING_Clone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -372,6 +400,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TVING_Clone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -77,14 +77,10 @@ final class LoginViewController: BaseUIViewController {
 
     // MARK: - Life Cycle
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     // MARK: - Custom Method
 
     override func setUI() {
-        [welcomeLabel,idTextField, pwTextField, loginButton, findAccountStack, signupStack]
+        [welcomeLabel, idTextField, pwTextField, loginButton, findAccountStack, signupStack]
             .forEach { view.addSubview($0) }
     }
 
@@ -140,7 +136,7 @@ final class LoginViewController: BaseUIViewController {
         makeNicknameButton.addTarget(self, action: #selector(makeNicknameButtonDidTap), for: .touchUpInside)
     }
 
-    //MARK: - ActionMethod
+    // MARK: - ActionMethod
 
     @objc
     private func loginButtonDidTap() {
@@ -163,7 +159,7 @@ final class LoginViewController: BaseUIViewController {
 
 }
 
-extension LoginViewController : TextFieldValidatingDelegate {
+extension LoginViewController: TextFieldValidatingDelegate {
     func textFieldValidityDidChange() {
         let fields = [idTextField, pwTextField]
         loginButton.isDisabled = !fields.allSatisfy { $0.isValid }
