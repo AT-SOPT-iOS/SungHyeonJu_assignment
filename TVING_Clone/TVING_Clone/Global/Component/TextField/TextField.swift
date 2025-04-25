@@ -41,7 +41,6 @@ final class TextField: UITextField, AppTextFieldProtocol {
         }
     }
 
-
     weak var validationDelegate: TextFieldValidatingDelegate?
 
     // MARK: - Private Properties

@@ -13,7 +13,6 @@ class BaseUIViewController: UIViewController {
 
     // MARK: - UI Components
 
-
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
@@ -34,7 +33,6 @@ class BaseUIViewController: UIViewController {
 
     func setLayout() {}
 
-
     // MARK: - Action Method
 
     func addTarget() {}
@@ -43,4 +41,3 @@ class BaseUIViewController: UIViewController {
 
     func setDelegate() {}
 }
-

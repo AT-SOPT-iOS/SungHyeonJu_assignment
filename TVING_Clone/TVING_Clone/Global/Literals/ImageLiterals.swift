@@ -10,8 +10,8 @@ import UIKit
 enum ImageLiterals {
 
     // MARK: TextField Icon
-    static var ic_xcircle: UIImage { .load(name: "ic_xcircle")}
-    static var ic_eyeSlash: UIImage { .load(name: "ic_eyeSlash")}
+    static var icXcircle: UIImage { .load(name: "ic_xcircle")}
+    static var icEyeSlash: UIImage { .load(name: "ic_eyeSlash")}
 
     // MARK: Logo
     static var tvingLogo: UIImage { .load(name: "tvingLogo")}

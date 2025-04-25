@@ -21,7 +21,7 @@ extension UITextField {
         layer.cornerRadius = 3
     }
 
-    /// placeholder 색 변경
+    /// 기본값 외의 placeholder 색 변경시 사용하는 메소드
     func setPlaceholder(color: UIColor) {
         guard let string = self.placeholder else {
             return

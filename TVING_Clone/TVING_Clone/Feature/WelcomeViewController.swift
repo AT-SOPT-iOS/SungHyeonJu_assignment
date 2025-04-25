@@ -13,7 +13,6 @@ final class WelcomeViewController: BaseUIViewController {
     private var email: String?
     private var nickName: String?
 
-
     // MARK: - UIComponent
 
     private let welcomeLabel = UILabel().then {
@@ -34,13 +33,14 @@ final class WelcomeViewController: BaseUIViewController {
         $0.isDisabled = false
     }
 
-    //MARK: - Life Cycle
+    // MARK: - Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         bindData()
     }
 
-    //MARK: - Custom Method
+    // MARK: - Custom Method
 
     override func setUI() {
         [welcomeLabel, tvingLogoView, mainButton]
@@ -70,24 +70,21 @@ final class WelcomeViewController: BaseUIViewController {
         mainButton.addTarget(self, action: #selector(mainButtonDidTap), for: .touchUpInside)
     }
 
-    //MARK: - ActionMethod
+    // MARK: - ActionMethod
     @objc
     private func mainButtonDidTap() {
-        navigationController?.popViewController(animated:true)
+        navigationController?.popViewController(animated: true)
     }
 
-    //MARK: - PrivateMethod
+    // MARK: - PrivateMethod
     private func bindData() {
         let displayName = (nickName?.isEmpty == false ? nickName : email) ?? "???"
         self.welcomeLabel.text = "\(displayName) 님 \n반가워요!"
     }
 
-    //MARK: - HelperMethod
-    public func dataBind(email: String?, nickName: String?){
-            self.email = email
+    // MARK: - HelperMethod
+    public func dataBind(email: String?, nickName: String?) {
+        self.email = email
         self.nickName = nickName
-        }
+    }
 }
-
-
-
