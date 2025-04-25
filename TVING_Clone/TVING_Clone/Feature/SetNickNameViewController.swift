@@ -94,6 +94,7 @@ final class SetNickNameViewController: BaseUIViewController {
 }
 
 // MARK: - TextFieldValidatingDelegate
+
 extension SetNickNameViewController: TextFieldValidatingDelegate {
     func textFieldValidityDidChange() {
         let fields = [nickNameTextField]
