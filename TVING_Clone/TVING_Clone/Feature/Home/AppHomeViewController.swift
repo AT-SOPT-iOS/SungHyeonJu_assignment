@@ -20,7 +20,7 @@ final class AppHomeViewController: BaseUIViewController {
     // MARK: - Properties
     private lazy var viewControllers: [UIViewController] = {
         return [
-            ContentViewController(title: "테스트"),
+            HomeViewController(),
             LoginViewController(),
             LoginViewController(),
             WelcomeViewController(),

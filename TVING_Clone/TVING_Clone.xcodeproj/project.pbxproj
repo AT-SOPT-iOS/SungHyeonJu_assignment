@@ -42,8 +42,8 @@
 		E56DC5202DC29D480087DDA6 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DC51F2DC29D480087DDA6 /* UIView+.swift */; };
 		E56DC5222DC29D690087DDA6 /* BaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DC5212DC29D690087DDA6 /* BaseUIView.swift */; };
 		E56DC5242DC2A0A20087DDA6 /* CategoryTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DC5232DC2A0A20087DDA6 /* CategoryTabBar.swift */; };
-		E56DC5262DC2A6A60087DDA6 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DC5252DC2A6A60087DDA6 /* ContentViewController.swift */; };
-		E56DC52B2DC2BC220087DDA6 /* ContentSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DC52A2DC2BC220087DDA6 /* ContentSection.swift */; };
+		E56DC5262DC2A6A60087DDA6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DC5252DC2A6A60087DDA6 /* HomeViewController.swift */; };
+		E56DC52B2DC2BC220087DDA6 /* HomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DC52A2DC2BC220087DDA6 /* HomeSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,8 +82,8 @@
 		E56DC51F2DC29D480087DDA6 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		E56DC5212DC29D690087DDA6 /* BaseUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIView.swift; sourceTree = "<group>"; };
 		E56DC5232DC2A0A20087DDA6 /* CategoryTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTabBar.swift; sourceTree = "<group>"; };
-		E56DC5252DC2A6A60087DDA6 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
-		E56DC52A2DC2BC220087DDA6 /* ContentSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSection.swift; sourceTree = "<group>"; };
+		E56DC5252DC2A6A60087DDA6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E56DC52A2DC2BC220087DDA6 /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,7 +273,7 @@
 		E56DC5182DC29CD30087DDA6 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				E56DC5252DC2A6A60087DDA6 /* ContentViewController.swift */,
+				E56DC5252DC2A6A60087DDA6 /* HomeViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -281,7 +281,7 @@
 		E56DC5292DC2BBFA0087DDA6 /* Type */ = {
 			isa = PBXGroup;
 			children = (
-				E56DC52A2DC2BC220087DDA6 /* ContentSection.swift */,
+				E56DC52A2DC2BC220087DDA6 /* HomeSection.swift */,
 			);
 			path = Type;
 			sourceTree = "<group>";
@@ -415,10 +415,10 @@
 				E5190FF62DB96B5100FE7974 /* HorizontalStackView.swift in Sources */,
 				E51910012DB9D1C200FE7974 /* UIViewController+.swift in Sources */,
 				E5190FDA2DB957F400FE7974 /* SceneDelegate.swift in Sources */,
-				E56DC5262DC2A6A60087DDA6 /* ContentViewController.swift in Sources */,
+				E56DC5262DC2A6A60087DDA6 /* HomeViewController.swift in Sources */,
 				E56DC51E2DC29D100087DDA6 /* HomeModel.swift in Sources */,
 				E5190FDB2DB957F400FE7974 /* LoginViewController.swift in Sources */,
-				E56DC52B2DC2BC220087DDA6 /* ContentSection.swift in Sources */,
+				E56DC52B2DC2BC220087DDA6 /* HomeSection.swift in Sources */,
 				E5190FFA2DB96EE900FE7974 /* UITextField+.swift in Sources */,
 				E51910062DB9DFF100FE7974 /* AppTextFieldProtocol.swift in Sources */,
 			);
