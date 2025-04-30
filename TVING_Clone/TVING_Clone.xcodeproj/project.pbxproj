@@ -41,6 +41,8 @@
 		E56DC51E2DC29D100087DDA6 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DC51D2DC29D100087DDA6 /* HomeModel.swift */; };
 		E56DC5202DC29D480087DDA6 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DC51F2DC29D480087DDA6 /* UIView+.swift */; };
 		E56DC5222DC29D690087DDA6 /* BaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DC5212DC29D690087DDA6 /* BaseUIView.swift */; };
+		E56DC5242DC2A0A20087DDA6 /* CategoryTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DC5232DC2A0A20087DDA6 /* CategoryTabBar.swift */; };
+		E56DC5262DC2A6A60087DDA6 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DC5252DC2A6A60087DDA6 /* ContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +80,8 @@
 		E56DC51D2DC29D100087DDA6 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		E56DC51F2DC29D480087DDA6 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		E56DC5212DC29D690087DDA6 /* BaseUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIView.swift; sourceTree = "<group>"; };
+		E56DC5232DC2A0A20087DDA6 /* CategoryTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTabBar.swift; sourceTree = "<group>"; };
+		E56DC5252DC2A6A60087DDA6 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,9 +170,10 @@
 		E5190FE22DB9594900FE7974 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				E5190FF52DB96B5100FE7974 /* HorizontalStackView.swift */,
+				E56DC5232DC2A0A20087DDA6 /* CategoryTabBar.swift */,
 				E5190FF02DB9633700FE7974 /* Button */,
 				E51910042DB9DFAB00FE7974 /* TextField */,
-				E5190FF52DB96B5100FE7974 /* HorizontalStackView.swift */,
 				E5190FE12DB9594100FE7974 /* Base */,
 			);
 			path = Component;
@@ -265,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				E56DC5192DC29CE90087DDA6 /* HomeViewController.swift */,
+				E56DC5252DC2A6A60087DDA6 /* ContentViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -387,6 +393,7 @@
 				E519100A2DB9E84900FE7974 /* SetNickNameViewController.swift in Sources */,
 				E5190FED2DB95D8F00FE7974 /* BoxButton.swift in Sources */,
 				E56DC5202DC29D480087DDA6 /* UIView+.swift in Sources */,
+				E56DC5242DC2A0A20087DDA6 /* CategoryTabBar.swift in Sources */,
 				E5190FF82DB96EA600FE7974 /* TextField.swift in Sources */,
 				E5190FD92DB957F400FE7974 /* AppDelegate.swift in Sources */,
 				E5190FE72DB95A9300FE7974 /* UIColor+.swift in Sources */,
@@ -397,6 +404,7 @@
 				E5190FF62DB96B5100FE7974 /* HorizontalStackView.swift in Sources */,
 				E51910012DB9D1C200FE7974 /* UIViewController+.swift in Sources */,
 				E5190FDA2DB957F400FE7974 /* SceneDelegate.swift in Sources */,
+				E56DC5262DC2A6A60087DDA6 /* ContentViewController.swift in Sources */,
 				E56DC51E2DC29D100087DDA6 /* HomeModel.swift in Sources */,
 				E5190FDB2DB957F400FE7974 /* LoginViewController.swift in Sources */,
 				E5190FFA2DB96EE900FE7974 /* UITextField+.swift in Sources */,

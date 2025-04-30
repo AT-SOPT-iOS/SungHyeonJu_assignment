@@ -14,6 +14,7 @@ public final class TextButton: UIButton, AppButtonProtocol {
         case secondary   // 일반 진한 회색 텍스트
         case tertiary    // 흐릿한 안내 텍스트
         case link        // 밑줄 강조된 텍스트
+        case tabBar
     }
 
     // MARK: - Public interface
@@ -74,6 +75,10 @@ public final class TextButton: UIButton, AppButtonProtocol {
         case .link:
             titleLabel?.font = .underlineButton
             underlineTitle()
+        case .tabBar:
+            titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+            setTitleColor(.white, for: .normal)
+            setAttributedTitle(nil, for: .normal)
         }
     }
 }
