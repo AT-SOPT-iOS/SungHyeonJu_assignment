@@ -36,6 +36,11 @@
 		E519102D2DBA3F2800FE7974 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = E519102C2DBA3F2800FE7974 /* Pretendard-Light.otf */; };
 		E519102F2DBA3F2C00FE7974 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = E519102E2DBA3F2C00FE7974 /* Pretendard-Medium.otf */; };
 		E56DC4992DBB5C150087DDA6 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = E56DC4982DBB5C150087DDA6 /* .swiftlint.yml */; };
+		E56DC51A2DC29CE90087DDA6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DC5192DC29CE90087DDA6 /* HomeViewController.swift */; };
+		E56DC51C2DC29D020087DDA6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DC51B2DC29D020087DDA6 /* HomeView.swift */; };
+		E56DC51E2DC29D100087DDA6 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DC51D2DC29D100087DDA6 /* HomeModel.swift */; };
+		E56DC5202DC29D480087DDA6 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DC51F2DC29D480087DDA6 /* UIView+.swift */; };
+		E56DC5222DC29D690087DDA6 /* BaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DC5212DC29D690087DDA6 /* BaseUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +73,11 @@
 		E519102E2DBA3F2C00FE7974 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		E53771662DB94F8E00E932D0 /* TVING_Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVING_Clone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E56DC4982DBB5C150087DDA6 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		E56DC5192DC29CE90087DDA6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E56DC51B2DC29D020087DDA6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E56DC51D2DC29D100087DDA6 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		E56DC51F2DC29D480087DDA6 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		E56DC5212DC29D690087DDA6 /* BaseUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +129,7 @@
 		E5190FDD2DB9581A00FE7974 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				E56DC5152DC29CBA0087DDA6 /* Home */,
 				E5190FD42DB957F400FE7974 /* LoginViewController.swift */,
 				E51910092DB9E84900FE7974 /* SetNickNameViewController.swift */,
 				E51910072DB9E62F00FE7974 /* WelcomeViewController.swift */,
@@ -147,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				E5190FF32DB9663A00FE7974 /* BaseUIViewController.swift */,
+				E56DC5212DC29D690087DDA6 /* BaseUIView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -169,6 +181,7 @@
 				E5190FF92DB96EE900FE7974 /* UITextField+.swift */,
 				E51910002DB9D1C200FE7974 /* UIViewController+.swift */,
 				E51910202DBA3B8A00FE7974 /* UIFont+.swift */,
+				E56DC51F2DC29D480087DDA6 /* UIView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -220,6 +233,40 @@
 				E53771662DB94F8E00E932D0 /* TVING_Clone.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E56DC5152DC29CBA0087DDA6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E56DC5182DC29CD30087DDA6 /* ViewController */,
+				E56DC5172DC29CCC0087DDA6 /* View */,
+				E56DC5162DC29CC30087DDA6 /* Model */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E56DC5162DC29CC30087DDA6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E56DC51D2DC29D100087DDA6 /* HomeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E56DC5172DC29CCC0087DDA6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E56DC51B2DC29D020087DDA6 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E56DC5182DC29CD30087DDA6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E56DC5192DC29CE90087DDA6 /* HomeViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,19 +380,24 @@
 			files = (
 				E51910032DB9DF9400FE7974 /* ValidationType.swift in Sources */,
 				E51910082DB9E62F00FE7974 /* WelcomeViewController.swift in Sources */,
+				E56DC51A2DC29CE90087DDA6 /* HomeViewController.swift in Sources */,
 				E5190FEF2DB960EB00FE7974 /* TextButton.swift in Sources */,
 				E5190FFF2DB9CA7600FE7974 /* ImageLiterals.swift in Sources */,
 				E5190FF22DB9635200FE7974 /* AppButtonProtocol.swift in Sources */,
 				E519100A2DB9E84900FE7974 /* SetNickNameViewController.swift in Sources */,
 				E5190FED2DB95D8F00FE7974 /* BoxButton.swift in Sources */,
+				E56DC5202DC29D480087DDA6 /* UIView+.swift in Sources */,
 				E5190FF82DB96EA600FE7974 /* TextField.swift in Sources */,
 				E5190FD92DB957F400FE7974 /* AppDelegate.swift in Sources */,
 				E5190FE72DB95A9300FE7974 /* UIColor+.swift in Sources */,
 				E51910212DBA3B8B00FE7974 /* UIFont+.swift in Sources */,
 				E5190FF42DB9663A00FE7974 /* BaseUIViewController.swift in Sources */,
+				E56DC5222DC29D690087DDA6 /* BaseUIView.swift in Sources */,
+				E56DC51C2DC29D020087DDA6 /* HomeView.swift in Sources */,
 				E5190FF62DB96B5100FE7974 /* HorizontalStackView.swift in Sources */,
 				E51910012DB9D1C200FE7974 /* UIViewController+.swift in Sources */,
 				E5190FDA2DB957F400FE7974 /* SceneDelegate.swift in Sources */,
+				E56DC51E2DC29D100087DDA6 /* HomeModel.swift in Sources */,
 				E5190FDB2DB957F400FE7974 /* LoginViewController.swift in Sources */,
 				E5190FFA2DB96EE900FE7974 /* UITextField+.swift in Sources */,
 				E51910062DB9DFF100FE7974 /* AppTextFieldProtocol.swift in Sources */,
