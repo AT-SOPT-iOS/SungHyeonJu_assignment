@@ -9,18 +9,19 @@ import UIKit
 
 final class HomeViewController: BaseUIViewController {
 
+    // MARK: - Data
+    private let homeData: [HomeSectionModel] = HomeSectionModel.dummy()
+
     // MARK: - UI Components
     private let homeView = HomeView()
 
-    // MARK: - Custom Method
+    // MARK: - Life Cycle
     override func setUI() {
         view.addSubview(homeView)
     }
 
     override func setLayout() {
-        homeView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
+        homeView.snp.makeConstraints { $0.edges.equalToSuperview() }
     }
 
     override func setDelegate() {
@@ -32,65 +33,68 @@ final class HomeViewController: BaseUIViewController {
 // MARK: - UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return HomeSection.allCases.count
+        return homeData.count
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10 // 더미 데이터
+        switch homeData[section] {
+        case .todayTop20(let items): return items.count
+        case .live(let items): return items.count
+        case .movie(let items): return items.count
+        case .baseballLogos(let items): return items.count
+        case .serviceLogos(let items): return items.count
+        case .pdPick(let items): return items.count
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let section = HomeSection(rawValue: indexPath.section) else {
-            return UICollectionViewCell()
-        }
+        let sectionModel = homeData[indexPath.section]
 
-        let identifier = section.cellReuseIdentifier
-
-        switch section {
-        case .live:
+        switch sectionModel {
+        case .todayTop20(let items):
             guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: identifier,
-                for: indexPath
-            ) as? LiveChannelCell else {
-                assertionFailure("LiveChannelCell 캐스팅 실패")
-                return UICollectionViewCell()
-            }
-
-            cell.configure(
-                image: .tvingLogo,
-                ranking: indexPath.item + 1,
-                channel: "JTBC",
-                title: "이혼숙려캠프 34화",
-                percentage: "27.2%"
-            )
-            return cell
-
-        case .top20:
-            guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: identifier,
+                withReuseIdentifier: TodayTop20Cell.reuseIdentifier,
                 for: indexPath
             ) as? TodayTop20Cell else {
                 assertionFailure("TodayTop20Cell 캐스팅 실패")
                 return UICollectionViewCell()
             }
+            let model = items[indexPath.item]
+            cell.configure(image: model.image, ranking: model.ranking)
+            return cell
 
+        case .live(let items):
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: LiveChannelCell.reuseIdentifier,
+                for: indexPath
+            ) as? LiveChannelCell else {
+                assertionFailure("LiveChannelCell 캐스팅 실패")
+                return UICollectionViewCell()
+            }
+            let model = items[indexPath.item]
             cell.configure(
-                image: .tvingLogo, 
-                ranking: indexPath.item + 1
+                image: model.image,
+                ranking: model.ranking,
+                channel: model.channel,
+                title: model.title,
+                percentage: model.percentage
             )
             return cell
 
-        default:
+        case .movie(let items),
+             .baseballLogos(let items),
+             .serviceLogos(let items),
+             .pdPick(let items):
             guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: identifier,
+                withReuseIdentifier: ImageCollectionViewCell.reuseIdentifier,
                 for: indexPath
             ) as? ImageCollectionViewCell else {
                 assertionFailure("ImageCollectionViewCell 캐스팅 실패")
                 return UICollectionViewCell()
             }
-
-            cell.configure(image: .tvingLogo)
+            let model = items[indexPath.item]
+            cell.configure(image: model.image)
             return cell
         }
     }
@@ -98,6 +102,7 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
+
         guard let section = HomeSection(rawValue: indexPath.section),
               kind == UICollectionView.elementKindSectionHeader else {
             return UICollectionReusableView()
@@ -112,9 +117,10 @@ extension HomeViewController: UICollectionViewDataSource {
             return UICollectionReusableView()
         }
 
-        header.configure(title: section.title)
+        header.configure(title: section.title) 
         return header
     }
+
 }
 
 // MARK: - UICollectionViewDelegate
