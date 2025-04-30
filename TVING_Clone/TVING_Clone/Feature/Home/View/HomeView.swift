@@ -19,12 +19,19 @@ final class HomeView: UIView {
 
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .black
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+
+        collectionView.register(LiveChannelCell.self, forCellWithReuseIdentifier: LiveChannelCell.reuseIdentifier)
+        collectionView.register(TodayTop20Cell.self, forCellWithReuseIdentifier: TodayTop20Cell.reuseIdentifier)
+        collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.reuseIdentifier)
+        collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.reuseIdentifier)
+        collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.reuseIdentifier)
+
         collectionView.register(
             SectionHeaderView.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
             withReuseIdentifier: SectionHeaderView.reuseIdentifier
         )
+
         return collectionView
     }()
 
@@ -48,7 +55,7 @@ final class HomeView: UIView {
     }
 }
 
-// MARK: - Section HeaderView 
+// MARK: - Section HeaderView
 extension HomeView {
     final class SectionHeaderView: UICollectionReusableView {
         static let reuseIdentifier = "SectionHeaderView"

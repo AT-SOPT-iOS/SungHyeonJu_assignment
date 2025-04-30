@@ -8,16 +8,16 @@
 import UIKit
 
 enum HomeSection: Int, CaseIterable {
-    case live, movie, baseballLogos, serviceLogos, pdPick, top20
+    case top20, live, movie, baseballLogos, serviceLogos, recommand
 
     var title: String {
         switch self {
+        case .top20: return "티빙 TOP 20"
         case .live: return "인기 LIVE 채널"
         case .movie: return "인기 영화"
         case .baseballLogos: return ""
         case .serviceLogos: return ""
-        case .pdPick: return "PD 추천 작품"
-        case .top20: return "티빙 TOP 20"
+        case .recommand: return "현주 추천 작품"
         }
     }
 
@@ -30,9 +30,12 @@ enum HomeSection: Int, CaseIterable {
         let groupSize: NSCollectionLayoutSize
 
         switch self {
+        case .top20:
+            itemSize = .init(widthDimension: .absolute(140), heightDimension: .absolute(160))
+            groupSize = .init(widthDimension: .estimated(100), heightDimension: .absolute(160))
         case .live:
-            itemSize = .init(widthDimension: .absolute(200), heightDimension: .absolute(120))
-            groupSize = .init(widthDimension: .estimated(200), heightDimension: .absolute(120))
+            itemSize = .init(widthDimension: .absolute(200), heightDimension: .absolute(200))
+            groupSize = .init(widthDimension: .estimated(200), heightDimension: .absolute(200))
         case .movie:
             itemSize = .init(widthDimension: .absolute(100), heightDimension: .absolute(150))
             groupSize = .init(widthDimension: .estimated(100), heightDimension: .absolute(150))
@@ -42,12 +45,9 @@ enum HomeSection: Int, CaseIterable {
         case .serviceLogos:
             itemSize = .init(widthDimension: .absolute(90), heightDimension: .absolute(44))
             groupSize = .init(widthDimension: .estimated(90), heightDimension: .absolute(44))
-        case .pdPick:
+        case .recommand:
             itemSize = .init(widthDimension: .absolute(200), heightDimension: .absolute(120))
             groupSize = .init(widthDimension: .estimated(200), heightDimension: .absolute(120))
-        case .top20:
-            itemSize = .init(widthDimension: .absolute(100), heightDimension: .absolute(160))
-            groupSize = .init(widthDimension: .estimated(100), heightDimension: .absolute(160))
         }
 
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -75,5 +75,13 @@ enum HomeSection: Int, CaseIterable {
         }
 
         return section
+    }
+
+    var cellReuseIdentifier: String {
+        switch self {
+        case .live: return LiveChannelCell.reuseIdentifier
+        case .top20: return TodayTop20Cell.reuseIdentifier
+        default: return ImageCollectionViewCell.reuseIdentifier
+        }
     }
 }

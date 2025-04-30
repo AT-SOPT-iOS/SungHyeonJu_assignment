@@ -36,15 +36,63 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 10 // 더미 데이터
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .darkGray
-        cell.layer.cornerRadius = 8
-        return cell
+        guard let section = HomeSection(rawValue: indexPath.section) else {
+            return UICollectionViewCell()
+        }
+
+        let identifier = section.cellReuseIdentifier
+
+        switch section {
+        case .live:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: identifier,
+                for: indexPath
+            ) as? LiveChannelCell else {
+                assertionFailure("LiveChannelCell 캐스팅 실패")
+                return UICollectionViewCell()
+            }
+
+            cell.configure(
+                image: .tvingLogo,
+                ranking: indexPath.item + 1,
+                channel: "JTBC",
+                title: "이혼숙려캠프 34화",
+                percentage: "27.2%"
+            )
+            return cell
+
+        case .top20:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: identifier,
+                for: indexPath
+            ) as? TodayTop20Cell else {
+                assertionFailure("TodayTop20Cell 캐스팅 실패")
+                return UICollectionViewCell()
+            }
+
+            cell.configure(
+                image: .tvingLogo, 
+                ranking: indexPath.item + 1
+            )
+            return cell
+
+        default:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: identifier,
+                for: indexPath
+            ) as? ImageCollectionViewCell else {
+                assertionFailure("ImageCollectionViewCell 캐스팅 실패")
+                return UICollectionViewCell()
+            }
+
+            cell.configure(image: .tvingLogo)
+            return cell
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -60,6 +108,7 @@ extension HomeViewController: UICollectionViewDataSource {
             withReuseIdentifier: HomeView.SectionHeaderView.reuseIdentifier,
             for: indexPath
         ) as? HomeView.SectionHeaderView else {
+            assertionFailure("SectionHeaderView 캐스팅 실패")
             return UICollectionReusableView()
         }
 
