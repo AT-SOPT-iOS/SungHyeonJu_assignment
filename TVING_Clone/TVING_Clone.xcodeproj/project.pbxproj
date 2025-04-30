@@ -47,6 +47,7 @@
 		E56DC52E2DC2C1530087DDA6 /* LiveChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DC52D2DC2C1530087DDA6 /* LiveChannelCell.swift */; };
 		E56DC5302DC2C47A0087DDA6 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DC52F2DC2C47A0087DDA6 /* ImageCollectionViewCell.swift */; };
 		E56DC5322DC2C7DF0087DDA6 /* TodayTop20Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DC5312DC2C7DF0087DDA6 /* TodayTop20Cell.swift */; };
+		E56DC5342DC2D2890087DDA6 /* UICollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DC5332DC2D2890087DDA6 /* UICollectionView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		E56DC52D2DC2C1530087DDA6 /* LiveChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChannelCell.swift; sourceTree = "<group>"; };
 		E56DC52F2DC2C47A0087DDA6 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		E56DC5312DC2C7DF0087DDA6 /* TodayTop20Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTop20Cell.swift; sourceTree = "<group>"; };
+		E56DC5332DC2D2890087DDA6 /* UICollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 				E51910002DB9D1C200FE7974 /* UIViewController+.swift */,
 				E51910202DBA3B8A00FE7974 /* UIFont+.swift */,
 				E56DC51F2DC29D480087DDA6 /* UIView+.swift */,
+				E56DC5332DC2D2890087DDA6 /* UICollectionView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				E51910082DB9E62F00FE7974 /* WelcomeViewController.swift in Sources */,
 				E56DC51A2DC29CE90087DDA6 /* AppHomeViewController.swift in Sources */,
 				E56DC52E2DC2C1530087DDA6 /* LiveChannelCell.swift in Sources */,
+				E56DC5342DC2D2890087DDA6 /* UICollectionView+.swift in Sources */,
 				E5190FEF2DB960EB00FE7974 /* TextButton.swift in Sources */,
 				E5190FFF2DB9CA7600FE7974 /* ImageLiterals.swift in Sources */,
 				E5190FF22DB9635200FE7974 /* AppButtonProtocol.swift in Sources */,
