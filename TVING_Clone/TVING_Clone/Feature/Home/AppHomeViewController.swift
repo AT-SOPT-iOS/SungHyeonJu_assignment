@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  AppHomeViewController.swift
 //  TVING_Clone
 //
 //  Created by 성현주 on 5/1/25.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class HomeViewController: BaseUIViewController {
+final class AppHomeViewController: BaseUIViewController {
 
     // MARK: - UI Components
     private let categoryTabBar = CategoryTabBarView()
@@ -72,7 +72,7 @@ final class HomeViewController: BaseUIViewController {
 }
 
 // MARK: - CategoryTabBarViewDelegate
-extension HomeViewController: CategoryTabBarViewDelegate {
+extension AppHomeViewController: CategoryTabBarViewDelegate {
     func didSelectCategory(index: Int) {
         let direction: UIPageViewController.NavigationDirection = index > currentIndex ? .forward : .reverse
 
@@ -87,7 +87,7 @@ extension HomeViewController: CategoryTabBarViewDelegate {
 }
 
 // MARK: - UIPageViewControllerDataSource
-extension HomeViewController: UIPageViewControllerDataSource {
+extension AppHomeViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let index = viewControllers.firstIndex(of: viewController), index > 0 else { return nil }
         return viewControllers[index - 1]
@@ -100,7 +100,7 @@ extension HomeViewController: UIPageViewControllerDataSource {
 }
 
 // MARK: - UIPageViewControllerDelegate
-extension HomeViewController: UIPageViewControllerDelegate {
+extension AppHomeViewController: UIPageViewControllerDelegate {
     func pageViewController(
         _ pageViewController: UIPageViewController,
         didFinishAnimating finished: Bool,

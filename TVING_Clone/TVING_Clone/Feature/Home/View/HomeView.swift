@@ -13,6 +13,8 @@ final class HomeView: BaseUIView {
 
     // MARK: - UI Components
 
+
+
     // MARK: - Custom Method
 
     override func setUI() {
@@ -24,3 +26,4 @@ final class HomeView: BaseUIView {
     }
 
 }
+
