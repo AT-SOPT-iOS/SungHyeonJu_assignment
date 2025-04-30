@@ -12,12 +12,12 @@ enum HomeSection: Int, CaseIterable {
 
     var title: String {
         switch self {
-        case .top20: return "티빙 TOP 20"
-        case .live: return "인기 LIVE 채널"
-        case .movie: return "인기 영화"
+        case .top20: return "오늘의 티빙 TOP 20"
+        case .live: return "실시간 인기 LIVE"
+        case .movie: return "실시간 인기 영화"
         case .baseballLogos: return ""
         case .serviceLogos: return ""
-        case .recommand: return "현주 추천 작품"
+        case .recommand: return "현주의 인생작 TOP 5"
         }
     }
 
