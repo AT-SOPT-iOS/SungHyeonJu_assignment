@@ -20,17 +20,10 @@ final class HomeView: UIView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .black
 
-        collectionView.register(LiveChannelCell.self, forCellWithReuseIdentifier: LiveChannelCell.reuseIdentifier)
-        collectionView.register(TodayTop20Cell.self, forCellWithReuseIdentifier: TodayTop20Cell.reuseIdentifier)
-        collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.reuseIdentifier)
-        collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.reuseIdentifier)
-        collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.reuseIdentifier)
-
-        collectionView.register(
-            SectionHeaderView.self,
-            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: SectionHeaderView.reuseIdentifier
-        )
+        collectionView.register(cell: TodayTop20Cell.self)
+        collectionView.register(cell: LiveChannelCell.self)
+        collectionView.register(cell: ImageCollectionViewCell.self)
+        collectionView.registerHeaderView(reusableView: SectionHeaderView.self)
 
         return collectionView
     }()

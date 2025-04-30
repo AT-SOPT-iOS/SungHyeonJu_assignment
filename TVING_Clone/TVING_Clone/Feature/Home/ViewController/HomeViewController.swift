@@ -53,25 +53,13 @@ extension HomeViewController: UICollectionViewDataSource {
 
         switch sectionModel {
         case .todayTop20(let items):
-            guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: TodayTop20Cell.reuseIdentifier,
-                for: indexPath
-            ) as? TodayTop20Cell else {
-                assertionFailure("TodayTop20Cell 캐스팅 실패")
-                return UICollectionViewCell()
-            }
+            let cell = collectionView.dequeueReusableCell(type: TodayTop20Cell.self, forIndexPath: indexPath)
             let model = items[indexPath.item]
             cell.configure(image: model.image, ranking: model.ranking)
             return cell
 
         case .live(let items):
-            guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: LiveChannelCell.reuseIdentifier,
-                for: indexPath
-            ) as? LiveChannelCell else {
-                assertionFailure("LiveChannelCell 캐스팅 실패")
-                return UICollectionViewCell()
-            }
+            let cell = collectionView.dequeueReusableCell(type: LiveChannelCell.self, forIndexPath: indexPath)
             let model = items[indexPath.item]
             cell.configure(
                 image: model.image,
@@ -86,13 +74,7 @@ extension HomeViewController: UICollectionViewDataSource {
              .baseballLogos(let items),
              .serviceLogos(let items),
              .pdPick(let items):
-            guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: ImageCollectionViewCell.reuseIdentifier,
-                for: indexPath
-            ) as? ImageCollectionViewCell else {
-                assertionFailure("ImageCollectionViewCell 캐스팅 실패")
-                return UICollectionViewCell()
-            }
+            let cell = collectionView.dequeueReusableCell(type: ImageCollectionViewCell.self, forIndexPath: indexPath)
             let model = items[indexPath.item]
             cell.configure(image: model.image)
             return cell
@@ -108,19 +90,10 @@ extension HomeViewController: UICollectionViewDataSource {
             return UICollectionReusableView()
         }
 
-        guard let header = collectionView.dequeueReusableSupplementaryView(
-            ofKind: kind,
-            withReuseIdentifier: HomeView.SectionHeaderView.reuseIdentifier,
-            for: indexPath
-        ) as? HomeView.SectionHeaderView else {
-            assertionFailure("SectionHeaderView 캐스팅 실패")
-            return UICollectionReusableView()
-        }
-
-        header.configure(title: section.title) 
+        let header = collectionView.dequeueHeaderView(type: HomeView.SectionHeaderView.self, forIndexPath: indexPath)
+        header.configure(title: section.title)
         return header
     }
-
 }
 
 // MARK: - UICollectionViewDelegate
