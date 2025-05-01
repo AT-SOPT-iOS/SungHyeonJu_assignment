@@ -18,7 +18,6 @@ final class LiveChannelCell: UICollectionViewCell {
         $0.contentMode = .scaleAspectFill
         $0.layer.cornerRadius = 8
         $0.clipsToBounds = true
-        $0.backgroundColor = .darkGray 
     }
 
     private let rankingLabel = UILabel().then {

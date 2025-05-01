@@ -8,6 +8,7 @@
 import UIKit
 
 enum HomeSectionModel {
+    case mainPoster([ImagePosterModel])
     case todayTop20([Top20Model])
     case live([LiveChannelModel])
     case movie([ImagePosterModel])
@@ -36,6 +37,9 @@ struct ImagePosterModel {
 extension HomeSectionModel {
     static func dummy() -> [HomeSectionModel] {
         return [
+            .mainPoster([
+                ImagePosterModel(image: ImageLiterals.whatYourName)
+                    ]),
             // MARK: - 오늘의 TOP 20 (Shorts)
             .todayTop20([
                 Top20Model(ranking: 1, image: ImageLiterals.signal),
@@ -65,8 +69,14 @@ extension HomeSectionModel {
 
             // MARK: - 야구 로고 (Shorts)
             .baseballLogos([
-                ImagePosterModel(image: ImageLiterals.baseBall),
-                ImagePosterModel(image: ImageLiterals.kong)
+                ImagePosterModel(image: ImageLiterals.dosan),
+                ImagePosterModel(image: ImageLiterals.kia),
+                ImagePosterModel(image: ImageLiterals.samsung),
+                ImagePosterModel(image: ImageLiterals.lg),
+                ImagePosterModel(image: ImageLiterals.dosan),
+                ImagePosterModel(image: ImageLiterals.kia),
+                ImagePosterModel(image: ImageLiterals.samsung),
+                ImagePosterModel(image: ImageLiterals.lg)
             ]),
 
             // MARK: - 서비스 로고 (Shorts)

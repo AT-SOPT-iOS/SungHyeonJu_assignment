@@ -9,7 +9,7 @@ import UIKit
 
 final class HomeViewController: BaseUIViewController {
 
-    // MARK: - Data
+    // MARK: - DummyData
     private let homeData: [HomeSectionModel] = HomeSectionModel.dummy()
 
     // MARK: - UI Components
@@ -44,14 +44,33 @@ extension HomeViewController: UICollectionViewDataSource {
         case .baseballLogos(let items): return items.count
         case .serviceLogos(let items): return items.count
         case .pdPick(let items): return items.count
+        case .mainPoster(let items): return items.count
+
         }
     }
 
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let sectionModel = homeData[indexPath.section]
 
         switch sectionModel {
+        case .mainPoster(let items),
+             .movie(let items),
+             .serviceLogos(let items),
+             .pdPick(let items):
+            let cell = collectionView.dequeueReusableCell(type: ImageCollectionViewCell.self, forIndexPath: indexPath)
+            let model = items[indexPath.item]
+            cell.configure(image: model.image)
+
+            if case .mainPoster = sectionModel {
+                cell.setCornerRadius(0)
+                cell.applyLayoutStyle(.fullFill)
+            }  else {
+                cell.setCornerRadius(8)
+                cell.applyLayoutStyle(.fullFill)
+            }
+
+            return cell
+
         case .todayTop20(let items):
             let cell = collectionView.dequeueReusableCell(type: TodayTop20Cell.self, forIndexPath: indexPath)
             let model = items[indexPath.item]
@@ -70,13 +89,13 @@ extension HomeViewController: UICollectionViewDataSource {
             )
             return cell
 
-        case .movie(let items),
-             .baseballLogos(let items),
-             .serviceLogos(let items),
-             .pdPick(let items):
+        case .baseballLogos(let items):
             let cell = collectionView.dequeueReusableCell(type: ImageCollectionViewCell.self, forIndexPath: indexPath)
             let model = items[indexPath.item]
             cell.configure(image: model.image)
+            cell.setCornerRadius(0)
+            cell.setBackgroundColor(indexPath.item % 2 == 0 ? .white : .black)
+            cell.applyLayoutStyle(.centerFit)
             return cell
         }
     }
