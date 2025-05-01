@@ -24,7 +24,6 @@ final class TodayTop20Cell: UICollectionViewCell {
         $0.textAlignment = .left
     }
 
-
     private let thumbnailImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
         $0.clipsToBounds = true
@@ -57,7 +56,7 @@ final class TodayTop20Cell: UICollectionViewCell {
         thumbnailImageView.snp.makeConstraints {
             $0.top.bottom.trailing.equalToSuperview()
             $0.leading.equalTo(rankingLabel.snp.trailing)
-            $0.width.equalTo(thumbnailImageView.snp.height).multipliedBy(2/3.0) // 2:3 비율
+            $0.width.equalTo(thumbnailImageView.snp.height).multipliedBy(2/3.0) 
         }
     }
 

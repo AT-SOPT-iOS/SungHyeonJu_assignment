@@ -8,10 +8,11 @@
 import UIKit
 
 enum HomeSection: Int, CaseIterable {
-    case top20, live, movie, baseballLogos, serviceLogos, recommand
+    case mainPoster, top20, live, movie, baseballLogos, serviceLogos, recommand
 
     var title: String {
         switch self {
+        case .mainPoster: return ""
         case .top20: return "오늘의 티빙 TOP 20"
         case .live: return "실시간 인기 LIVE"
         case .movie: return "실시간 인기 영화"
@@ -25,29 +26,51 @@ enum HomeSection: Int, CaseIterable {
         return self != .baseballLogos && self != .serviceLogos
     }
 
-    func createLayoutSection() -> NSCollectionLayoutSection {
-        let itemSize: NSCollectionLayoutSize
-        let groupSize: NSCollectionLayoutSize
-
+    var itemSize: NSCollectionLayoutSize {
         switch self {
         case .top20:
-            itemSize = .init(widthDimension: .absolute(140), heightDimension: .absolute(160))
-            groupSize = .init(widthDimension: .estimated(100), heightDimension: .absolute(160))
+            return .init(widthDimension: .absolute(140), heightDimension: .absolute(160))
         case .live:
-            itemSize = .init(widthDimension: .absolute(200), heightDimension: .absolute(200))
-            groupSize = .init(widthDimension: .estimated(200), heightDimension: .absolute(200))
+            return .init(widthDimension: .absolute(200), heightDimension: .absolute(200))
         case .movie:
-            itemSize = .init(widthDimension: .absolute(100), heightDimension: .absolute(150))
-            groupSize = .init(widthDimension: .estimated(100), heightDimension: .absolute(150))
+            return .init(widthDimension: .absolute(100), heightDimension: .absolute(150))
         case .baseballLogos:
-            itemSize = .init(widthDimension: .absolute(60), heightDimension: .absolute(60))
-            groupSize = .init(widthDimension: .estimated(60), heightDimension: .absolute(60))
+            return .init(widthDimension: .absolute(80), heightDimension: .absolute(50))
         case .serviceLogos:
-            itemSize = .init(widthDimension: .absolute(90), heightDimension: .absolute(44))
-            groupSize = .init(widthDimension: .estimated(90), heightDimension: .absolute(44))
+            return .init(widthDimension: .absolute(90), heightDimension: .absolute(44))
         case .recommand:
-            itemSize = .init(widthDimension: .absolute(200), heightDimension: .absolute(120))
-            groupSize = .init(widthDimension: .estimated(200), heightDimension: .absolute(120))
+            return .init(widthDimension: .absolute(200), heightDimension: .absolute(120))
+        case .mainPoster:
+            return .init(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        }
+    }
+
+    var groupSize: NSCollectionLayoutSize {
+        switch self {
+        case .top20:
+            return .init(widthDimension: .estimated(100), heightDimension: .absolute(160))
+        case .live:
+            return .init(widthDimension: .estimated(200), heightDimension: .absolute(200))
+        case .movie:
+            return .init(widthDimension: .estimated(100), heightDimension: .absolute(150))
+        case .baseballLogos:
+            return .init(widthDimension: .estimated(80), heightDimension: .absolute(50))
+        case .serviceLogos:
+            return .init(widthDimension: .estimated(90), heightDimension: .absolute(44))
+        case .recommand:
+            return .init(widthDimension: .estimated(200), heightDimension: .absolute(120))
+        case .mainPoster:
+            return .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(600))
+        }
+    }
+
+    func createLayoutSection() -> NSCollectionLayoutSection {
+        if self == .mainPoster {
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+            return NSCollectionLayoutSection(group: group).then {
+                $0.contentInsets = .zero
+            }
         }
 
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -60,7 +83,7 @@ enum HomeSection: Int, CaseIterable {
         section.contentInsets = NSDirectionalEdgeInsets(
             top: 0,
             leading: 16,
-            bottom: (self == .serviceLogos ? 32 : (self == .baseballLogos ? 16 : 24)),
+            bottom: bottomInset,
             trailing: 16
         )
 
@@ -75,6 +98,14 @@ enum HomeSection: Int, CaseIterable {
         }
 
         return section
+    }
+
+    private var bottomInset: CGFloat {
+        switch self {
+        case .serviceLogos: return 32
+        case .baseballLogos: return 16
+        default: return 24
+        }
     }
 
     var cellReuseIdentifier: String {

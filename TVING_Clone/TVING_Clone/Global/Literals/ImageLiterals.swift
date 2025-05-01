@@ -15,8 +15,14 @@ enum ImageLiterals {
 
     // MARK: - Logo
     static var tvingLogo: UIImage { .load(name: "tvingLogo") }
+    // MARK: - BaseBallTeam
+    static var kia: UIImage { .load(name: "kia") }
+    static var dosan: UIImage { .load(name: "dosan") }
+    static var lg: UIImage { .load(name: "lg") }
+    static var samsung: UIImage { .load(name: "samsung") }
 
     // MARK: - Long Thumbnails
+    static var whatYourName: UIImage { .load(name: "whatYourName") }
     static var askToStar: UIImage { .load(name: "askToStar") }
     static var divorceInsurance: UIImage { .load(name: "divorceInsurance") }
     static var earthArcade3: UIImage { .load(name: "earthArcade3") }
@@ -37,7 +43,6 @@ enum ImageLiterals {
     static var suzume: UIImage { .load(name: "suzume") }
     static var theRoadOfTheRings: UIImage { .load(name: "theRoadOfTheRings") }
 }
-
 
 extension UIImage {
     static func load(name: String) -> UIImage {
