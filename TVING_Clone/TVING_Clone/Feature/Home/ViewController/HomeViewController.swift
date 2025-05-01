@@ -10,7 +10,7 @@ import UIKit
 final class HomeViewController: BaseUIViewController {
 
     // MARK: - DummyData
-    private let homeData: [HomeSectionModel] = HomeSectionModel.dummy()
+    private let homeData: [HomeModel] = HomeModel.dummy()
 
     // MARK: - UI Components
     private let homeView = HomeView()
@@ -57,14 +57,22 @@ extension HomeViewController: UICollectionViewDataSource {
              .movie(let items),
              .serviceLogos(let items),
              .pdPick(let items):
+
             let cell = collectionView.dequeueReusableCell(type: ImageCollectionViewCell.self, forIndexPath: indexPath)
             let model = items[indexPath.item]
             cell.configure(image: model.image)
 
-            if case .mainPoster = sectionModel {
+            switch sectionModel {
+            case .mainPoster:
                 cell.setCornerRadius(0)
                 cell.applyLayoutStyle(.fullFill)
-            }  else {
+
+            case .serviceLogos:
+                cell.setCornerRadius(8)
+                cell.setBackgroundColor(.gray3)
+                cell.applyLayoutStyle(.centerFit)
+
+            default:
                 cell.setCornerRadius(8)
                 cell.applyLayoutStyle(.fullFill)
             }
