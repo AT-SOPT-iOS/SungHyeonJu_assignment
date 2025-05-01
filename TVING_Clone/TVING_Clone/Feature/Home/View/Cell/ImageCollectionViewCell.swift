@@ -22,13 +22,14 @@ final class ImageCollectionViewCell: UICollectionViewCell {
     private let imageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
         $0.clipsToBounds = true
-        $0.layer.cornerRadius = 8
     }
 
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.addSubview(imageView)
+        contentView.backgroundColor = .gray
+        contentView.layer.cornerRadius = 8
         applyLayoutStyle(.fullFill) // 기본 레이아웃 스타일
     }
 
@@ -42,7 +43,7 @@ final class ImageCollectionViewCell: UICollectionViewCell {
     }
 
     func setCornerRadius(_ radius: CGFloat) {
-        imageView.layer.cornerRadius = radius
+        contentView.layer.cornerRadius = radius
     }
 
     func setBackgroundColor(_ color: UIColor) {

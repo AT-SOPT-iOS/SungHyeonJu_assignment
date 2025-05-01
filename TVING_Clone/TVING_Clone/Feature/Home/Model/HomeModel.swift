@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum HomeSectionModel {
+enum HomeModel {
     case mainPoster([ImagePosterModel])
     case todayTop20([Top20Model])
     case live([LiveChannelModel])
@@ -34,8 +34,8 @@ struct ImagePosterModel {
     let image: UIImage?
 }
 
-extension HomeSectionModel {
-    static func dummy() -> [HomeSectionModel] {
+extension HomeModel {
+    static func dummy() -> [HomeModel] {
         return [
             .mainPoster([
                 ImagePosterModel(image: ImageLiterals.whatYourName)
@@ -44,7 +44,10 @@ extension HomeSectionModel {
             .todayTop20([
                 Top20Model(ranking: 1, image: ImageLiterals.signal),
                 Top20Model(ranking: 2, image: ImageLiterals.harryPorter),
-                Top20Model(ranking: 3, image: ImageLiterals.theRoadOfTheRings)
+                Top20Model(ranking: 3, image: ImageLiterals.theRoadOfTheRings),
+                Top20Model(ranking: 4, image: ImageLiterals.signal),
+                Top20Model(ranking: 5, image: ImageLiterals.harryPorter),
+                Top20Model(ranking: 6, image: ImageLiterals.theRoadOfTheRings)
             ]),
 
             // MARK: - 실시간 인기 LIVE (Long)
@@ -81,8 +84,14 @@ extension HomeSectionModel {
 
             // MARK: - 서비스 로고 (Shorts)
             .serviceLogos([
-                ImagePosterModel(image: .tvingLogo),
-                ImagePosterModel(image: .tvingLogo)
+                ImagePosterModel(image: .appleTV),
+                ImagePosterModel(image: .kbl),
+                ImagePosterModel(image: .afc),
+                ImagePosterModel(image: .kbo),
+                ImagePosterModel(image: .appleTV),
+                ImagePosterModel(image: .kbl),
+                ImagePosterModel(image: .afc),
+                ImagePosterModel(image: .kbo)
             ]),
 
             // MARK: - PD 추천작 (Long)
