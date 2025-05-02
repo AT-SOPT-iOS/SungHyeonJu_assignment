@@ -21,7 +21,9 @@ final class HomeViewController: BaseUIViewController {
     }
 
     override func setLayout() {
-        homeView.snp.makeConstraints { $0.edges.equalToSuperview() }
+        homeView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
 
     override func setDelegate() {
@@ -103,18 +105,28 @@ extension HomeViewController: UICollectionViewDataSource {
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
 
-        if kind == UICollectionView.elementKindSectionFooter {
-            return collectionView.dequeueFooterView(type: FooterView.self, forIndexPath: indexPath)
-        }
+        switch kind {
+        case UICollectionView.elementKindSectionFooter:
+            return collectionView.dequeueFooterView(
+                type: FooterView.self,
+                forIndexPath: indexPath
+            )
 
-        guard let section = HomeSection(rawValue: indexPath.section),
-              kind == UICollectionView.elementKindSectionHeader else {
+        case UICollectionView.elementKindSectionHeader:
+            guard let section = HomeSection(rawValue: indexPath.section) else {
+                return UICollectionReusableView()
+            }
+
+            let header = collectionView.dequeueHeaderView(
+                type: SectionHeaderView.self,
+                forIndexPath: indexPath
+            )
+            header.configure(title: section.title)
+            return header
+
+        default:
             return UICollectionReusableView()
         }
-
-        let header = collectionView.dequeueHeaderView(type: SectionHeaderView.self, forIndexPath: indexPath)
-        header.configure(title: section.title)
-        return header
     }
 }
 
