@@ -73,7 +73,8 @@ final class WelcomeViewController: BaseUIViewController {
     // MARK: - ActionMethod
     @objc
     private func mainButtonDidTap() {
-        navigationController?.popViewController(animated: true)
+        let appHomeVC = AppHomeViewController()
+        navigationController?.pushViewController(appHomeVC, animated: true)
     }
 
     // MARK: - PrivateMethod
