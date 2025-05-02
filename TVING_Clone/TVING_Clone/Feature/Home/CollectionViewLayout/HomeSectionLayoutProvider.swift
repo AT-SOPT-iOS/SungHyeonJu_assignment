@@ -22,14 +22,14 @@ struct HomeSectionLayoutProvider {
             return layoutSection
         }
 
-        layoutSection.orthogonalScrollingBehavior = .continuous
+        layoutSection.orthogonalScrollingBehavior = .groupPaging
         layoutSection.interGroupSpacing = section.interGroupSpacing
         layoutSection.contentInsets = .init(top: 0, leading: 16, bottom: section.bottomInset, trailing: 16)
 
         if section.hasHeader {
             layoutSection.boundarySupplementaryItems.append(
                 .init(
-                    layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(36)),
+                    layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(42)),
                     elementKind: UICollectionView.elementKindSectionHeader,
                     alignment: .top
                 )
@@ -58,7 +58,7 @@ private extension HomeSection {
         case .top20:
             return .init(widthDimension: .absolute(140), heightDimension: .absolute(160))
         case .live:
-            return .init(widthDimension: .absolute(200), heightDimension: .absolute(200))
+            return .init(widthDimension: .absolute(200), heightDimension: .absolute(160))
         case .movie:
             return .init(widthDimension: .absolute(100), heightDimension: .absolute(150))
         case .baseballLogos:
@@ -82,11 +82,7 @@ private extension HomeSection {
     }
 
     var bottomInset: CGFloat {
-        switch self {
-        case .serviceLogos: return 32
-        case .baseballLogos: return 16
-        default: return 24
-        }
+        return 28
     }
 
     var interGroupSpacing: CGFloat {

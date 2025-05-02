@@ -34,7 +34,6 @@ final class SectionHeaderView: UICollectionReusableView {
     private let pageControl = UIPageControl().then {
         $0.currentPageIndicatorTintColor = .white
         $0.pageIndicatorTintColor = .darkGray
-        $0.numberOfPages = 3
         $0.isHidden = true
     }
 

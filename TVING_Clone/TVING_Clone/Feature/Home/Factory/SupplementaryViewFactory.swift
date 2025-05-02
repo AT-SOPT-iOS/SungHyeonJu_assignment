@@ -36,8 +36,7 @@ struct SupplementaryViewFactory {
                 title: section.title,
                 style: style,
                 page: 0,
-                // TODO: 실제 값으로 바꾸기
-                totalPages: 3
+                totalPages: homeData[indexPath.section].itemCount
             )
             return header
 
