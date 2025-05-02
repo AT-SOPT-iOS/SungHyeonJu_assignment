@@ -56,7 +56,7 @@ final class TodayTop20Cell: UICollectionViewCell {
         thumbnailImageView.snp.makeConstraints {
             $0.top.bottom.trailing.equalToSuperview()
             $0.leading.equalTo(rankingLabel.snp.trailing)
-            $0.width.equalTo(thumbnailImageView.snp.height).multipliedBy(2/3.0) 
+            $0.width.equalTo(thumbnailImageView.snp.height).multipliedBy(2/3.0)
         }
     }
 
