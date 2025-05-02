@@ -14,7 +14,7 @@ enum HomeModel {
     case movie([ImagePosterModel])
     case baseballLogos([ImagePosterModel])
     case serviceLogos([ImagePosterModel])
-    case pdPick([ImagePosterModel])
+    case recommand([ImagePosterModel])
 }
 
 struct Top20Model {
@@ -33,6 +33,8 @@ struct LiveChannelModel {
 struct ImagePosterModel {
     let image: UIImage?
 }
+
+// MARK: - 더미 데이터
 
 extension HomeModel {
     static func dummy() -> [HomeModel] {
@@ -95,7 +97,7 @@ extension HomeModel {
             ]),
 
             // MARK: - PD 추천작 (Long)
-            .pdPick([
+            .recommand([
                 ImagePosterModel(image: ImageLiterals.earthArcade3),
                 ImagePosterModel(image: ImageLiterals.transitLove3),
                 ImagePosterModel(image: ImageLiterals.earthArcade3),

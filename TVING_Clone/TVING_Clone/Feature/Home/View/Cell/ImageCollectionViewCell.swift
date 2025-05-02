@@ -13,9 +13,44 @@ final class ImageCollectionViewCell: UICollectionViewCell {
     static let reuseIdentifier = "ImageCollectionViewCell"
 
     // MARK: - Type
+    enum Style {
+        case mainPoster
+        case recommand
+        case movie
+        case serviceLogo
+        case baseball
+
+        var layoutStyle: ImageLayoutStyle {
+            switch self {
+            case .mainPoster, .movie, .recommand:
+                return .fullFill
+            case .serviceLogo, .baseball:
+                return .centerFit
+            }
+        }
+
+        var cornerRadius: CGFloat {
+            switch self {
+            case .mainPoster, .baseball:
+                return 0
+            default:
+                return 8
+            }
+        }
+
+        var backgroundColor: UIColor? {
+            switch self {
+            case .serviceLogo:
+                return .gray3
+            default:
+                return nil
+            }
+        }
+    }
+
     enum ImageLayoutStyle {
-        case fullFill    // 꽉 채우는 방식
-        case centerFit   // 가운데 정렬 + 비율 유지
+        case fullFill
+        case centerFit
     }
 
     // MARK: - UI
@@ -28,9 +63,6 @@ final class ImageCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.addSubview(imageView)
-        contentView.backgroundColor = .gray
-        contentView.layer.cornerRadius = 8
-        applyLayoutStyle(.fullFill) // 기본 레이아웃 스타일
     }
 
     required init?(coder: NSCoder) {
@@ -38,27 +70,20 @@ final class ImageCollectionViewCell: UICollectionViewCell {
     }
 
     // MARK: - Configure
-    func configure(image: UIImage?) {
+    func configure(image: UIImage?, style: Style, backgroundColorOverride: UIColor? = nil) {
         imageView.image = image
+        contentView.layer.cornerRadius = style.cornerRadius
+        contentView.backgroundColor = backgroundColorOverride ?? style.backgroundColor ?? .gray
+        applyLayoutStyle(style.layoutStyle)
     }
 
-    func setCornerRadius(_ radius: CGFloat) {
-        contentView.layer.cornerRadius = radius
-    }
-
-    func setBackgroundColor(_ color: UIColor) {
-        contentView.backgroundColor = color
-    }
-
-    func applyLayoutStyle(_ style: ImageLayoutStyle) {
-        imageView.snp.removeConstraints() // 기존 제약 제거
+    private func applyLayoutStyle(_ style: ImageLayoutStyle) {
+        imageView.snp.removeConstraints()
 
         switch style {
         case .fullFill:
             imageView.contentMode = .scaleAspectFill
-            imageView.snp.makeConstraints {
-                $0.edges.equalToSuperview()
-            }
+            imageView.snp.makeConstraints { $0.edges.equalToSuperview() }
 
         case .centerFit:
             imageView.contentMode = .scaleAspectFit
