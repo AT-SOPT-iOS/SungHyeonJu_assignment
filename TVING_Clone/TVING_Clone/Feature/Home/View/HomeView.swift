@@ -11,16 +11,15 @@ import SnapKit
 final class HomeView: BaseUIView {
 
     // MARK: - UI Components
-    let collectionView: UICollectionView = {
-        let layout = UICollectionViewCompositionalLayout { sectionIndex, _ in
+    let collectionView = UICollectionView(
+        frame: .zero,
+        collectionViewLayout: UICollectionViewCompositionalLayout { sectionIndex, _ in
             guard let section = HomeSection(rawValue: sectionIndex) else { return nil }
             return section.createLayoutSection()
         }
-
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .black
-        return collectionView
-    }()
+    ).then {
+        $0.backgroundColor = .black
+    }
 
     // MARK: - Custum Method
     override func setUI() {
