@@ -65,7 +65,7 @@ enum HomeSection: Int, CaseIterable {
     }
 
     func createLayoutSection() -> NSCollectionLayoutSection {
-        //main poster 고정 
+        //main poster 고정
         if self == .mainPoster {
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
@@ -89,15 +89,24 @@ enum HomeSection: Int, CaseIterable {
         )
 
         if hasHeader {
-            section.boundarySupplementaryItems = [
+            section.boundarySupplementaryItems.append(
                 NSCollectionLayoutBoundarySupplementaryItem(
                     layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(36)),
                     elementKind: UICollectionView.elementKindSectionHeader,
                     alignment: .top
                 )
-            ]
+            )
         }
 
+        if self == .recommand {
+            section.boundarySupplementaryItems.append(
+                NSCollectionLayoutBoundarySupplementaryItem(
+                    layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(120)),
+                    elementKind: UICollectionView.elementKindSectionFooter,
+                    alignment: .bottom
+                )
+            )
+        }
         return section
     }
 

@@ -103,12 +103,16 @@ extension HomeViewController: UICollectionViewDataSource {
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
 
+        if kind == UICollectionView.elementKindSectionFooter {
+            return collectionView.dequeueFooterView(type: FooterView.self, forIndexPath: indexPath)
+        }
+
         guard let section = HomeSection(rawValue: indexPath.section),
               kind == UICollectionView.elementKindSectionHeader else {
             return UICollectionReusableView()
         }
 
-        let header = collectionView.dequeueHeaderView(type: HomeView.SectionHeaderView.self, forIndexPath: indexPath)
+        let header = collectionView.dequeueHeaderView(type: SectionHeaderView.self, forIndexPath: indexPath)
         header.configure(title: section.title)
         return header
     }

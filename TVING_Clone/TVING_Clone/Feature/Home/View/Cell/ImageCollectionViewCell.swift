@@ -41,7 +41,7 @@ final class ImageCollectionViewCell: UICollectionViewCell {
         var backgroundColor: UIColor? {
             switch self {
             case .serviceLogo:
-                return .gray3
+                return .gray4
             default:
                 return nil
             }
@@ -73,6 +73,7 @@ final class ImageCollectionViewCell: UICollectionViewCell {
     func configure(image: UIImage?, style: Style, backgroundColorOverride: UIColor? = nil) {
         imageView.image = image
         contentView.layer.cornerRadius = style.cornerRadius
+        imageView.layer.cornerRadius = style.cornerRadius
         contentView.backgroundColor = backgroundColorOverride ?? style.backgroundColor ?? .gray
         applyLayoutStyle(style.layoutStyle)
     }
