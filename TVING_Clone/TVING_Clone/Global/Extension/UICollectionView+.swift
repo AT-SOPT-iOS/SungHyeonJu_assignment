@@ -49,13 +49,11 @@ extension UICollectionView {
         register(cell, forCellWithReuseIdentifier: reuseIdentifier)
     }
 
-    func registerHeaderView<T: UICollectionReusableView>(reusableView: T.Type,
-                                           forCellWithReuseIdentifier reuseIdentifier: String = T.className) {
+    func registerHeaderView<T: UICollectionReusableView>(reusableView: T.Type, forCellWithReuseIdentifier reuseIdentifier: String = T.className) {
         register(reusableView, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: reuseIdentifier)
     }
 
-    func registerFooterView<T: UICollectionReusableView>(reusableView: T.Type,
-                                           forCellWithReuseIdentifier reuseIdentifier: String = T.className) {
+    func registerFooterView<T: UICollectionReusableView>(reusableView: T.Type, forCellWithReuseIdentifier reuseIdentifier: String = T.className) {
         register(reusableView, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: reuseIdentifier)
     }
 }

@@ -65,6 +65,7 @@ enum HomeSection: Int, CaseIterable {
     }
 
     func createLayoutSection() -> NSCollectionLayoutSection {
+        //main poster 고정 
         if self == .mainPoster {
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
