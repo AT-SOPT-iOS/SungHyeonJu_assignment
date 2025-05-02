@@ -56,6 +56,7 @@ extension HomeModel {
 // MARK: - 더미 데이터
 
 extension HomeModel {
+    // swiftlint:disable:next function_body_length
     static func dummy() -> [HomeModel] {
         return [
             .mainPoster([
@@ -74,9 +75,9 @@ extension HomeModel {
             // MARK: - 실시간 인기 LIVE (Long)
             .live([
                 LiveChannelModel(image: ImageLiterals.transitLove3, ranking: 1, channel: "JTBC", title: "이혼숙려캠프 34화", percentage: "27.2%"),
-                LiveChannelModel(image: ImageLiterals.askToStar, ranking: 2, channel: "KBS", title: "별들에게 물어봐", percentage: "24.1%"),
-                LiveChannelModel(image: ImageLiterals.askToStar, ranking: 3, channel: "KBS", title: "별들에게 물어봐", percentage: "24.1%"),
-                LiveChannelModel(image: ImageLiterals.askToStar, ranking: 4, channel: "KBS", title: "별들에게 물어봐", percentage: "24.1%"),
+                LiveChannelModel(image: ImageLiterals.earthArcade3, ranking: 2, channel: "KBS", title: "별들에게 물어봐", percentage: "24.1%"),
+                LiveChannelModel(image: ImageLiterals.residentLife, ranking: 3, channel: "KBS", title: "별들에게 물어봐", percentage: "24.1%"),
+                LiveChannelModel(image: ImageLiterals.runWithSJ, ranking: 4, channel: "KBS", title: "별들에게 물어봐", percentage: "24.1%"),
                 LiveChannelModel(image: ImageLiterals.askToStar, ranking: 5, channel: "KBS", title: "별들에게 물어봐", percentage: "24.1%"),
                 LiveChannelModel(image: ImageLiterals.askToStar, ranking: 6, channel: "KBS", title: "별들에게 물어봐", percentage: "24.1%")
             ]),
