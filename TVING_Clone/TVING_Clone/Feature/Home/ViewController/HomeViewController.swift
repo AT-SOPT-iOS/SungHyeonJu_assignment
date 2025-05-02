@@ -39,94 +39,19 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch homeData[section] {
-        case .todayTop20(let items): return items.count
-        case .live(let items): return items.count
-        case .movie(let items): return items.count
-        case .baseballLogos(let items): return items.count
-        case .serviceLogos(let items): return items.count
-        case .recommand(let items): return items.count
-        case .mainPoster(let items): return items.count
-
-        }
+        return homeData[section].itemCount
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let sectionModel = homeData[indexPath.section]
-
-        switch sectionModel {
-        case .mainPoster(let items):
-            let cell = collectionView.dequeueReusableCell(type: ImageCollectionViewCell.self, forIndexPath: indexPath)
-            cell.configure(image: items[indexPath.item].image, style: .mainPoster)
-            return cell
-
-        case .movie(let items):
-            let cell = collectionView.dequeueReusableCell(type: ImageCollectionViewCell.self, forIndexPath: indexPath)
-            cell.configure(image: items[indexPath.item].image, style: .movie)
-            return cell
-
-        case .recommand(let items):
-            let cell = collectionView.dequeueReusableCell(type: ImageCollectionViewCell.self, forIndexPath: indexPath)
-            cell.configure(image: items[indexPath.item].image, style: .recommand)
-            return cell
-
-        case .serviceLogos(let items):
-            let cell = collectionView.dequeueReusableCell(type: ImageCollectionViewCell.self, forIndexPath: indexPath)
-            cell.configure(image: items[indexPath.item].image, style: .serviceLogo)
-            return cell
-
-        case .baseballLogos(let items):
-            let cell = collectionView.dequeueReusableCell(type: ImageCollectionViewCell.self, forIndexPath: indexPath)
-            let bgColor = indexPath.item % 2 == 0 ? UIColor.white : UIColor.black
-            cell.configure(image: items[indexPath.item].image, style: .baseball, backgroundColorOverride: bgColor)
-            return cell
-
-        case .todayTop20(let items):
-            let model = items[indexPath.item]
-            let cell = collectionView.dequeueReusableCell(type: TodayTop20Cell.self, forIndexPath: indexPath)
-            cell.configure(image: model.image, ranking: model.ranking)
-            return cell
-
-        case .live(let items):
-            let model = items[indexPath.item]
-            let cell = collectionView.dequeueReusableCell(type: LiveChannelCell.self, forIndexPath: indexPath)
-            cell.configure(
-                image: model.image,
-                ranking: model.ranking,
-                channel: model.channel,
-                title: model.title,
-                percentage: model.percentage
-            )
-            return cell
-        }
+        return HomeCellFactory.makeCell(for: sectionModel, at: indexPath, in: collectionView)
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
-
-        switch kind {
-        case UICollectionView.elementKindSectionFooter:
-            return collectionView.dequeueFooterView(
-                type: FooterView.self,
-                forIndexPath: indexPath
-            )
-
-        case UICollectionView.elementKindSectionHeader:
-            guard let section = HomeSection(rawValue: indexPath.section) else {
-                return UICollectionReusableView()
-            }
-
-            let header = collectionView.dequeueHeaderView(
-                type: SectionHeaderView.self,
-                forIndexPath: indexPath
-            )
-            header.configure(title: section.title)
-            return header
-
-        default:
-            return UICollectionReusableView()
-        }
+        return SupplementaryViewFactory.makeView(kind: kind, at: indexPath, in: collectionView, homeData: homeData)
     }
 }
 

@@ -34,6 +34,25 @@ struct ImagePosterModel {
     let image: UIImage?
 }
 
+extension HomeModel {
+    var itemCount: Int {
+        switch self {
+        case .mainPoster(let items),
+             .movie(let items),
+             .recommand(let items),
+             .serviceLogos(let items),
+             .baseballLogos(let items):
+            return items.count
+
+        case .todayTop20(let items):
+            return items.count
+
+        case .live(let items):
+            return items.count
+        }
+    }
+}
+
 // MARK: - 더미 데이터
 
 extension HomeModel {
