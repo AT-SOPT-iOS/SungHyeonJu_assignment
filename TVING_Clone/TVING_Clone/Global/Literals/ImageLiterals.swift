@@ -15,6 +15,8 @@ enum ImageLiterals {
 
     // MARK: - Logo
     static var tvingLogo: UIImage { .load(name: "tvingLogo") }
+    static var tving: UIImage { .load(name: "tving") }
+    static var tvingIcon: UIImage { .load(name: "tvingIcon") }
     // MARK: - BaseBallTeam
     static var kia: UIImage { .load(name: "kia") }
     static var dosan: UIImage { .load(name: "dosan") }

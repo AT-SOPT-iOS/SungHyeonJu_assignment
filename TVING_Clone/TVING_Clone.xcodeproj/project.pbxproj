@@ -51,6 +51,7 @@
 		E5B4FFA22DC4C65F00012BB0 /* HomeSectionLayoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B4FFA12DC4C65F00012BB0 /* HomeSectionLayoutProvider.swift */; };
 		E5B4FFA42DC4C6C100012BB0 /* SupplementaryViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B4FFA32DC4C6C100012BB0 /* SupplementaryViewFactory.swift */; };
 		E5B4FFA62DC4C6DB00012BB0 /* HomeCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B4FFA52DC4C6DB00012BB0 /* HomeCellFactory.swift */; };
+		E5B4FFAB2DC503D700012BB0 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B4FFAA2DC503D700012BB0 /* IndicatorView.swift */; };
 		E5BEF2032DC4959A00EACBFD /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BEF2022DC4959A00EACBFD /* SectionHeaderView.swift */; };
 		E5BEF2052DC495BD00EACBFD /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BEF2042DC495BD00EACBFD /* FooterView.swift */; };
 /* End PBXBuildFile section */
@@ -100,6 +101,7 @@
 		E5B4FFA12DC4C65F00012BB0 /* HomeSectionLayoutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionLayoutProvider.swift; sourceTree = "<group>"; };
 		E5B4FFA32DC4C6C100012BB0 /* SupplementaryViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplementaryViewFactory.swift; sourceTree = "<group>"; };
 		E5B4FFA52DC4C6DB00012BB0 /* HomeCellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellFactory.swift; sourceTree = "<group>"; };
+		E5B4FFAA2DC503D700012BB0 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		E5BEF2022DC4959A00EACBFD /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		E5BEF2042DC495BD00EACBFD /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -287,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				E56DC51B2DC29D020087DDA6 /* HomeView.swift */,
+				E5B4FFAA2DC503D700012BB0 /* IndicatorView.swift */,
 				E5B4FFA72DC4CA2800012BB0 /* SupplementaryView */,
 				E56DC52C2DC2C1280087DDA6 /* Cell */,
 			);
@@ -492,6 +495,7 @@
 				E5190FD92DB957F400FE7974 /* AppDelegate.swift in Sources */,
 				E5190FE72DB95A9300FE7974 /* UIColor+.swift in Sources */,
 				E51910212DBA3B8B00FE7974 /* UIFont+.swift in Sources */,
+				E5B4FFAB2DC503D700012BB0 /* IndicatorView.swift in Sources */,
 				E5190FF42DB9663A00FE7974 /* BaseUIViewController.swift in Sources */,
 				E56DC5222DC29D690087DDA6 /* BaseUIView.swift in Sources */,
 				E5BEF2052DC495BD00EACBFD /* FooterView.swift in Sources */,
