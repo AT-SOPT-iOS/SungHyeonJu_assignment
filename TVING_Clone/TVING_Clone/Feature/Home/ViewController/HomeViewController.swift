@@ -13,7 +13,7 @@ final class HomeViewController: BaseUIViewController {
     private let homeData: [HomeModel] = HomeModel.dummy()
 
     // MARK: - UI Components
-    private let homeView = HomeView()
+    let homeView = HomeView()
 
     // MARK: - Life Cycle
     override func setUI() {

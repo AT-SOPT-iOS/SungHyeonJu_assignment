@@ -16,6 +16,7 @@ final class AppHomeViewController: BaseUIViewController {
         navigationOrientation: .horizontal,
         options: nil).then {_ in
     }
+    private let indicatorView = IndicatorView()
 
     // MARK: - Properties
     private lazy var viewControllers: [UIViewController] = {
@@ -32,12 +33,17 @@ final class AppHomeViewController: BaseUIViewController {
     private var currentIndex = 0
 
     // MARK: - Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
+    }
 
     // MARK: - UI Setup
     override func setUI() {
         addChild(pageViewController)
 
         view.addSubviews(
+            indicatorView,
             categoryTabBar,
             pageViewController.view
         )
@@ -52,8 +58,14 @@ final class AppHomeViewController: BaseUIViewController {
     }
 
     override func setLayout() {
-        categoryTabBar.snp.makeConstraints {
+        indicatorView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(48)
+        }
+
+        categoryTabBar.snp.makeConstraints {
+            $0.top.equalTo(indicatorView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(44)
         }
