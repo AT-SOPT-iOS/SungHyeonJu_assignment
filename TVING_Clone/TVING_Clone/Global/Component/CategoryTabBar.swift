@@ -12,7 +12,7 @@ protocol CategoryTabBarViewDelegate: AnyObject {
     func didSelectCategory(index: Int)
 }
 
-final class CategoryTabBarView: UIView {
+final class CategoryTabBarView: BaseUIView {
 
     // MARK: - Properties
     private let categories = ["홈", "드라마", "예능", "영화", "스포츠", "뉴스"]
@@ -20,32 +20,26 @@ final class CategoryTabBarView: UIView {
 
     private var indicatorCenterXConstraint: Constraint?
     private var indicatorWidthConstraint: Constraint?
+    private var didInitialLayout = false
 
     weak var delegate: CategoryTabBarViewDelegate?
 
     // MARK: - UI Components
-    private let stackView = UIStackView()
-    private let indicatorView = UIView()
-
-    // MARK: - Init
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        configureUI()
-        configureLayout()
-        layoutIfNeeded()
-        moveIndicator(to: 0)
+    private let stackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.distribution = .fillEqually
     }
 
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    private let indicatorView = UIView().then {
+        $0.backgroundColor = .white
     }
 
     // MARK: - Setup
-    private func configureUI() {
+    override func setUI() {
         backgroundColor = .black
 
-        stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
+        addSubview(stackView)
+        addSubview(indicatorView)
 
         for (index, title) in categories.enumerated() {
             let button = TextButton()
@@ -56,30 +50,22 @@ final class CategoryTabBarView: UIView {
             buttons.append(button)
             stackView.addArrangedSubview(button)
         }
-
-        indicatorView.backgroundColor = .white
     }
 
-    private func configureLayout() {
-        addSubview(stackView)
-        addSubview(indicatorView)
-
+    override func setLayout() {
         stackView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
 
-        guard let firstButton = buttons.first,
-              let titleLabel = firstButton.titleLabel else { return }
-
         indicatorView.snp.makeConstraints {
             $0.height.equalTo(2)
             $0.bottom.equalToSuperview()
-            indicatorCenterXConstraint = $0.centerX.equalTo(firstButton.snp.centerX).constraint
-            indicatorWidthConstraint = $0.width.equalTo(titleLabel.intrinsicContentSize.width).constraint
         }
+
+        moveIndicator(to: 0)
     }
 
-    // MARK: - Actions
+    // MARK: - Action Method
     @objc
     private func categoryTapped(_ sender: UIButton) {
         moveIndicator(to: sender.tag)
@@ -87,6 +73,8 @@ final class CategoryTabBarView: UIView {
     }
 
     func moveIndicator(to index: Int) {
+        guard index < buttons.count else { return }
+
         let targetButton = buttons[index]
         let titleWidth = targetButton.titleLabel?.intrinsicContentSize.width ?? 0
 
@@ -104,5 +92,4 @@ final class CategoryTabBarView: UIView {
             self.layoutIfNeeded()
         }
     }
-
 }

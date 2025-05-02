@@ -154,10 +154,10 @@
 		E5190FDD2DB9581A00FE7974 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				E56DC5152DC29CBA0087DDA6 /* Home */,
-				E5190FD42DB957F400FE7974 /* LoginViewController.swift */,
-				E51910092DB9E84900FE7974 /* SetNickNameViewController.swift */,
 				E51910072DB9E62F00FE7974 /* WelcomeViewController.swift */,
+				E5B4FFA92DC4CBD400012BB0 /* SetNickname */,
+				E5B4FFA82DC4CBBD00012BB0 /* Login */,
+				E56DC5152DC29CBA0087DDA6 /* Home */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -343,6 +343,22 @@
 				E5BEF2042DC495BD00EACBFD /* FooterView.swift */,
 			);
 			path = SupplementaryView;
+			sourceTree = "<group>";
+		};
+		E5B4FFA82DC4CBBD00012BB0 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E5190FD42DB957F400FE7974 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		E5B4FFA92DC4CBD400012BB0 /* SetNickname */ = {
+			isa = PBXGroup;
+			children = (
+				E51910092DB9E84900FE7974 /* SetNickNameViewController.swift */,
+			);
+			path = SetNickname;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

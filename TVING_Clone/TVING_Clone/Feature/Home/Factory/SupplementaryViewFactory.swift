@@ -19,8 +19,26 @@ struct SupplementaryViewFactory {
             guard let section = HomeSection(rawValue: indexPath.section) else {
                 return UICollectionReusableView()
             }
+
             let header = collectionView.dequeueHeaderView(type: SectionHeaderView.self, forIndexPath: indexPath)
-            header.configure(title: section.title)
+
+            let style: SectionHeaderView.HeaderStyle
+            switch section {
+            case .live, .movie:
+                style = .titleWithMoreButton
+            case .recommand:
+                style = .titleWithPageControl
+            default:
+                style = .titleOnly
+            }
+
+            header.configure(
+                title: section.title,
+                style: style,
+                page: 0,
+                // TODO: 실제 값으로 바꾸기
+                totalPages: 3
+            )
             return header
 
         case UICollectionView.elementKindSectionFooter:
