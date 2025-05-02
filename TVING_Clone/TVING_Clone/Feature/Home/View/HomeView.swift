@@ -11,11 +11,15 @@ import SnapKit
 final class HomeView: BaseUIView {
 
     // MARK: - UI Components
+
     let collectionView = UICollectionView(
         frame: .zero,
         collectionViewLayout: UICollectionViewCompositionalLayout { sectionIndex, _ in
-            guard let section = HomeSection(rawValue: sectionIndex) else { return nil }
-            return section.createLayoutSection()
+            guard let section = HomeSection(rawValue: sectionIndex) else {
+                //section 처리오류 예방 빈뷰처리
+                return NSCollectionLayoutSection(group: .horizontal(layoutSize: .init(widthDimension: .absolute(0), heightDimension: .absolute(0)), subitems: []))
+            }
+            return HomeSectionLayoutProvider.layout(for: section)
         }
     ).then {
         $0.backgroundColor = .black
