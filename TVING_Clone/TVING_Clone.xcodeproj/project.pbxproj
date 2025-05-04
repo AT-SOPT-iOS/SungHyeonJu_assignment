@@ -38,6 +38,16 @@
 		E56DC4992DBB5C150087DDA6 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = E56DC4982DBB5C150087DDA6 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		E5B400222DC77C2900012BB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E537715E2DB94F8E00E932D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E53771652DB94F8E00E932D0;
+			remoteInfo = TVING_Clone;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		E5190FCD2DB957F400FE7974 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5190FCE2DB957F400FE7974 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,7 +78,16 @@
 		E519102E2DBA3F2C00FE7974 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		E53771662DB94F8E00E932D0 /* TVING_Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVING_Clone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E56DC4982DBB5C150087DDA6 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		E5B4001E2DC77C2900012BB0 /* TVING_CloneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVING_CloneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		E5B4001F2DC77C2900012BB0 /* TVING_CloneTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TVING_CloneTests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E53771632DB94F8E00E932D0 /* Frameworks */ = {
@@ -77,6 +96,13 @@
 			files = (
 				E5190FB72DB9572200FE7974 /* SnapKit in Frameworks */,
 				E5190FFD2DB973DF00FE7974 /* Then in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5B4001B2DC77C2900012BB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				E5190FD52DB957F400FE7974 /* TVING_Clone */,
+				E5B4001F2DC77C2900012BB0 /* TVING_CloneTests */,
 				E53771672DB94F8E00E932D0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -218,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				E53771662DB94F8E00E932D0 /* TVING_Clone.app */,
+				E5B4001E2DC77C2900012BB0 /* TVING_CloneTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -247,6 +275,29 @@
 			productReference = E53771662DB94F8E00E932D0 /* TVING_Clone.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E5B4001D2DC77C2900012BB0 /* TVING_CloneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5B400262DC77C2900012BB0 /* Build configuration list for PBXNativeTarget "TVING_CloneTests" */;
+			buildPhases = (
+				E5B4001A2DC77C2900012BB0 /* Sources */,
+				E5B4001B2DC77C2900012BB0 /* Frameworks */,
+				E5B4001C2DC77C2900012BB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E5B400232DC77C2900012BB0 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				E5B4001F2DC77C2900012BB0 /* TVING_CloneTests */,
+			);
+			name = TVING_CloneTests;
+			packageProductDependencies = (
+			);
+			productName = TVING_CloneTests;
+			productReference = E5B4001E2DC77C2900012BB0 /* TVING_CloneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -259,6 +310,10 @@
 				TargetAttributes = {
 					E53771652DB94F8E00E932D0 = {
 						CreatedOnToolsVersion = 16.3;
+					};
+					E5B4001D2DC77C2900012BB0 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = E53771652DB94F8E00E932D0;
 					};
 				};
 			};
@@ -281,6 +336,7 @@
 			projectRoot = "";
 			targets = (
 				E53771652DB94F8E00E932D0 /* TVING_Clone */,
+				E5B4001D2DC77C2900012BB0 /* TVING_CloneTests */,
 			);
 		};
 /* End PBXProject section */
@@ -299,6 +355,13 @@
 				E51910252DBA3F1400FE7974 /* Pretendard-Black.otf in Resources */,
 				E5190FD72DB957F400FE7974 /* Assets.xcassets in Resources */,
 				E56DC4992DBB5C150087DDA6 /* .swiftlint.yml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5B4001C2DC77C2900012BB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,7 +415,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E5B4001A2DC77C2900012BB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E5B400232DC77C2900012BB0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E53771652DB94F8E00E932D0 /* TVING_Clone */;
+			targetProxy = E5B400222DC77C2900012BB0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E5190FCF2DB957F400FE7974 /* LaunchScreen.storyboard */ = {
@@ -539,6 +617,40 @@
 			};
 			name = Release;
 		};
+		E5B400242DC77C2900012BB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Rx.TVING-CloneTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TVING_Clone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TVING_Clone";
+			};
+			name = Debug;
+		};
+		E5B400252DC77C2900012BB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Rx.TVING-CloneTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TVING_Clone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TVING_Clone";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -556,6 +668,15 @@
 			buildConfigurations = (
 				E537717A2DB94F9000E932D0 /* Debug */,
 				E537717B2DB94F9000E932D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5B400262DC77C2900012BB0 /* Build configuration list for PBXNativeTarget "TVING_CloneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5B400242DC77C2900012BB0 /* Debug */,
+				E5B400252DC77C2900012BB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
