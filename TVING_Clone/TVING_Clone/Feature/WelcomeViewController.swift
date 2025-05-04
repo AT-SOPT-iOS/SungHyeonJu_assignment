@@ -74,7 +74,9 @@ final class WelcomeViewController: BaseUIViewController {
     @objc
     private func mainButtonDidTap() {
         let appHomeVC = AppHomeViewController()
-        navigationController?.pushViewController(appHomeVC, animated: true)
+        let navigationController = UINavigationController(rootViewController: appHomeVC)
+        navigationController.modalPresentationStyle = .fullScreen
+        UIView.setRootViewController(navigationController)
     }
 
     // MARK: - PrivateMethod
