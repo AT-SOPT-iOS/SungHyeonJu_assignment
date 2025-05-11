@@ -38,8 +38,8 @@
 		E554C9762DD0FDE1002CF37B /* MovieListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E554C9752DD0FDE1002CF37B /* MovieListDTO.swift */; };
 		E554C9782DD0FDEF002CF37B /* MovieListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E554C9772DD0FDEF002CF37B /* MovieListService.swift */; };
 		E554C97A2DD0FF26002CF37B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E554C9792DD0FF26002CF37B /* NetworkError.swift */; };
-		E554C97D2DD100A3002CF37B /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = E554C97C2DD100A3002CF37B /* Config.xcconfig */; };
 		E554C9802DD10150002CF37B /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E554C97F2DD10150002CF37B /* APIKey.swift */; };
+		E554C9822DD10463002CF37B /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = E554C9812DD10463002CF37B /* Config.xcconfig */; };
 		E56DC4992DBB5C150087DDA6 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = E56DC4982DBB5C150087DDA6 /* .swiftlint.yml */; };
 		E56DC51A2DC29CE90087DDA6 /* AppHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DC5192DC29CE90087DDA6 /* AppHomeViewController.swift */; };
 		E56DC51C2DC29D020087DDA6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DC51B2DC29D020087DDA6 /* HomeView.swift */; };
@@ -93,8 +93,8 @@
 		E554C9752DD0FDE1002CF37B /* MovieListDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListDTO.swift; sourceTree = "<group>"; };
 		E554C9772DD0FDEF002CF37B /* MovieListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListService.swift; sourceTree = "<group>"; };
 		E554C9792DD0FF26002CF37B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		E554C97C2DD100A3002CF37B /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		E554C97F2DD10150002CF37B /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		E554C9812DD10463002CF37B /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		E56DC4982DBB5C150087DDA6 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		E56DC5192DC29CE90087DDA6 /* AppHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeViewController.swift; sourceTree = "<group>"; };
 		E56DC51B2DC29D020087DDA6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 				E5190FDC2DB9580B00FE7974 /* Global */,
 				E5190FD32DB957F400FE7974 /* Info.plist */,
 				E56DC4982DBB5C150087DDA6 /* .swiftlint.yml */,
-				E554C97C2DD100A3002CF37B /* Config.xcconfig */,
+				E554C9812DD10463002CF37B /* Config.xcconfig */,
 			);
 			path = TVING_Clone;
 			sourceTree = "<group>";
@@ -485,7 +485,7 @@
 				E519102F2DBA3F2C00FE7974 /* Pretendard-Medium.otf in Resources */,
 				E51910292DBA3F1E00FE7974 /* Pretendard-ExtraBold.otf in Resources */,
 				E519102D2DBA3F2800FE7974 /* Pretendard-Light.otf in Resources */,
-				E554C97D2DD100A3002CF37B /* Config.xcconfig in Resources */,
+				E554C9822DD10463002CF37B /* Config.xcconfig in Resources */,
 				E51910252DBA3F1400FE7974 /* Pretendard-Black.otf in Resources */,
 				E5190FD72DB957F400FE7974 /* Assets.xcassets in Resources */,
 				E56DC4992DBB5C150087DDA6 /* .swiftlint.yml in Resources */,
@@ -634,7 +634,7 @@
 		};
 		E537717C2DB94F9000E932D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E554C97C2DD100A3002CF37B /* Config.xcconfig */;
+			baseConfigurationReference = E554C9812DD10463002CF37B /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -698,7 +698,7 @@
 		};
 		E537717D2DB94F9000E932D0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E554C97C2DD100A3002CF37B /* Config.xcconfig */;
+			baseConfigurationReference = E554C9812DD10463002CF37B /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;

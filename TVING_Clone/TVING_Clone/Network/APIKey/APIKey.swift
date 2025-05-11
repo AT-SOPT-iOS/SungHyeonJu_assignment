@@ -7,4 +7,11 @@
 
 import Foundation
 
-let APIKey = Bundle.main.infoDictionary?["APIKey"] as! String
+enum AppConfig {
+    static var apiKey: String {
+        guard let key = Bundle.main.infoDictionary?["APIKey"] as? String else {
+            fatalError("APIKey 누락")
+        }
+        return key
+    }
+}
