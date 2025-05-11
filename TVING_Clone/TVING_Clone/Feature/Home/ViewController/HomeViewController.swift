@@ -10,7 +10,7 @@ import UIKit
 final class HomeViewController: BaseUIViewController {
 
     // MARK: - DummyData
-    private let homeData: [HomeModel] = HomeModel.dummy()
+    private var homeData: [HomeModel] = HomeModel.dummy()
 
     // MARK: - UI Components
     let homeView = HomeView()
@@ -18,6 +18,7 @@ final class HomeViewController: BaseUIViewController {
     // MARK: - Life Cycle
     override func setUI() {
         view.addSubview(homeView)
+        fetchLiveBoxOfficeData()
     }
 
     override func setLayout() {
@@ -30,6 +31,28 @@ final class HomeViewController: BaseUIViewController {
         homeView.collectionView.delegate = self
         homeView.collectionView.dataSource = self
     }
+}
+
+// MARK: - Network
+extension HomeViewController {
+    private func fetchLiveBoxOfficeData() {
+        Task {
+            do {
+                let reponse = try await MovieListService.shared.fetchLiveSectionWrapper(date: "20240501")
+                print(reponse)
+
+                //항상 3번째 위치할거 같아서 간단하게 모델 교채
+                if case .live = homeData[2] {
+                    homeData[2] = .live(reponse.models)
+                }
+
+                self.homeView.collectionView.reloadData()
+            } catch {
+                print("API 실패nㅠㅠㅠㅠㅠ: \(error)")
+            }
+        }
+    }
+
 }
 
 // MARK: - UICollectionViewDataSource

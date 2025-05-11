@@ -61,3 +61,5 @@ fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
 *.xconfig
+
+TVING_Clone/TVING_Clone/Config.xcconfig
