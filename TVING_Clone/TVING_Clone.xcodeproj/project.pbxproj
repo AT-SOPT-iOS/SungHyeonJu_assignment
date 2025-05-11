@@ -35,6 +35,9 @@
 		E519102B2DBA3F2400FE7974 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = E519102A2DBA3F2400FE7974 /* Pretendard-ExtraLight.otf */; };
 		E519102D2DBA3F2800FE7974 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = E519102C2DBA3F2800FE7974 /* Pretendard-Light.otf */; };
 		E519102F2DBA3F2C00FE7974 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = E519102E2DBA3F2C00FE7974 /* Pretendard-Medium.otf */; };
+		E554C9762DD0FDE1002CF37B /* MovieListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E554C9752DD0FDE1002CF37B /* MovieListDTO.swift */; };
+		E554C9782DD0FDEF002CF37B /* MovieListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E554C9772DD0FDEF002CF37B /* MovieListService.swift */; };
+		E554C97A2DD0FF26002CF37B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E554C9792DD0FF26002CF37B /* NetworkError.swift */; };
 		E56DC4992DBB5C150087DDA6 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = E56DC4982DBB5C150087DDA6 /* .swiftlint.yml */; };
 		E56DC51A2DC29CE90087DDA6 /* AppHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DC5192DC29CE90087DDA6 /* AppHomeViewController.swift */; };
 		E56DC51C2DC29D020087DDA6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DC51B2DC29D020087DDA6 /* HomeView.swift */; };
@@ -85,6 +88,9 @@
 		E519102C2DBA3F2800FE7974 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
 		E519102E2DBA3F2C00FE7974 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		E53771662DB94F8E00E932D0 /* TVING_Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVING_Clone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E554C9752DD0FDE1002CF37B /* MovieListDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListDTO.swift; sourceTree = "<group>"; };
+		E554C9772DD0FDEF002CF37B /* MovieListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListService.swift; sourceTree = "<group>"; };
+		E554C9792DD0FF26002CF37B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		E56DC4982DBB5C150087DDA6 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		E56DC5192DC29CE90087DDA6 /* AppHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeViewController.swift; sourceTree = "<group>"; };
 		E56DC51B2DC29D020087DDA6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -132,6 +138,7 @@
 		E5190FD52DB957F400FE7974 /* TVING_Clone */ = {
 			isa = PBXGroup;
 			children = (
+				E554C9722DD0FCC1002CF37B /* Network */,
 				E5190FD12DB957F400FE7974 /* Application */,
 				E5190FDD2DB9581A00FE7974 /* Feature */,
 				E5190FDC2DB9580B00FE7974 /* Global */,
@@ -261,6 +268,32 @@
 				E53771662DB94F8E00E932D0 /* TVING_Clone.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E554C9722DD0FCC1002CF37B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E554C9732DD0FCC8002CF37B /* Services */,
+				E554C9742DD0FDC9002CF37B /* DTO */,
+				E554C9792DD0FF26002CF37B /* NetworkError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E554C9732DD0FCC8002CF37B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E554C9772DD0FDEF002CF37B /* MovieListService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E554C9742DD0FDC9002CF37B /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				E554C9752DD0FDE1002CF37B /* MovieListDTO.swift */,
+			);
+			path = DTO;
 			sourceTree = "<group>";
 		};
 		E56DC5152DC29CBA0087DDA6 /* Home */ = {
@@ -501,6 +534,7 @@
 				E5BEF2052DC495BD00EACBFD /* FooterView.swift in Sources */,
 				E56DC51C2DC29D020087DDA6 /* HomeView.swift in Sources */,
 				E5190FF62DB96B5100FE7974 /* HorizontalStackView.swift in Sources */,
+				E554C9762DD0FDE1002CF37B /* MovieListDTO.swift in Sources */,
 				E51910012DB9D1C200FE7974 /* UIViewController+.swift in Sources */,
 				E5190FDA2DB957F400FE7974 /* SceneDelegate.swift in Sources */,
 				E56DC5262DC2A6A60087DDA6 /* HomeViewController.swift in Sources */,
@@ -508,6 +542,8 @@
 				E5190FDB2DB957F400FE7974 /* LoginViewController.swift in Sources */,
 				E56DC52B2DC2BC220087DDA6 /* HomeSection.swift in Sources */,
 				E5190FFA2DB96EE900FE7974 /* UITextField+.swift in Sources */,
+				E554C97A2DD0FF26002CF37B /* NetworkError.swift in Sources */,
+				E554C9782DD0FDEF002CF37B /* MovieListService.swift in Sources */,
 				E51910062DB9DFF100FE7974 /* AppTextFieldProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
