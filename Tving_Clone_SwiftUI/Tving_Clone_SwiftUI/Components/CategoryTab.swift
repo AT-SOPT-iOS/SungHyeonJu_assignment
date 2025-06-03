@@ -27,7 +27,7 @@ struct CategoryTabBar: View {
                             selectedTab = tab
                         }) {
                             Text(tab.rawValue)
-                                .font(.system(size: 18, weight: .semibold))
+                                .font(.system(size: 16, weight: .semibold))
                                 .foregroundColor(.white)
                         }
 
@@ -39,7 +39,7 @@ struct CategoryTabBar: View {
                 }
             }
             .padding(.horizontal)
-
+            .frame(height: 40)
         .background(Color.black)
     }
 }

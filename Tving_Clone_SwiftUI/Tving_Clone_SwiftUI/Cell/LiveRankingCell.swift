@@ -4,42 +4,37 @@
 //
 //  Created by 성현주 on 6/3/25.
 //
-
 import SwiftUI
 
 struct LiveRankingCell: View {
-    let rank: Int
-    let channel: String
-    let title: String
-    let rating: String
-    let image: Image
+    let show: LiveShow
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            image
+            Image(show.imageName)
                 .resizable()
-                .aspectRatio(16/9, contentMode: .fill)
-                .frame(height: 170)
+                .scaledToFill()
+                .frame(width: 160, height: 90)
                 .clipped()
                 .cornerRadius(10)
 
             HStack(alignment: .top, spacing: 6) {
-                Text("\(rank)")
+                Text("\(show.rank)")
                     .font(.system(size: 28, weight: .bold))
                     .italic()
                     .foregroundColor(.white)
 
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(channel)
+                    Text(show.channel)
                         .font(.subheadline)
                         .foregroundColor(.white)
                         .bold()
 
-                    Text(title)
+                    Text("\(show.title) \(show.episode)")
                         .font(.subheadline)
                         .foregroundColor(.white)
 
-                    Text(rating)
+                    Text(show.rating)
                         .font(.caption)
                         .foregroundColor(.gray)
                 }

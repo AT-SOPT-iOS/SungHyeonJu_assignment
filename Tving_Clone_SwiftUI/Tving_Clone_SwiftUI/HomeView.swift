@@ -11,12 +11,12 @@ struct HomeView: View {
         ScrollView {
             VStack(spacing: 20) {
                 BannerImage()
-                Top20Section()
-                LiveSection()
-                MovieSection()
+                Top20Section(movies: Movie.sampleMovies)
+                LiveSection(liveShows: LiveShow.sampleData)
+                MovieSection(movies: Movie.sampleMovies)
                 TeamLogoSection()
                 LogoSection()
-                PdPickSection()
+                RecommandSection(shows: RecommendedShow.sampleData)
             }
             .padding(.bottom, 20)
         }
@@ -26,15 +26,19 @@ struct HomeView: View {
 
 struct BannerImage: View {
     var body: some View {
-        Rectangle()
-            .fill(Color.gray)
-            .frame(height: 200)
-            .cornerRadius(10)
-            .padding(.horizontal)
+        Image("whatYourName")
+            .resizable()
+            .scaledToFill()
+            .frame(height: 600)
+            .clipped()
     }
 }
 
+
 struct Top20Section: View {
+
+    let movies: [Movie]
+
     var body: some View {
         VStack(alignment: .leading) {
             Text("오늘의 티빙 TOP 20")
@@ -44,11 +48,8 @@ struct Top20Section: View {
 
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 16) {
-                    ForEach(1..<6) { index in
-                        RankingPosterCell(
-                            rank: index,
-                            image: Image(systemName: "photo")
-                        )
+                    ForEach(movies) { movie in
+                        LongImgaeCell(movie: movie)
                     }
                 }
                 .padding(.horizontal)
@@ -58,24 +59,25 @@ struct Top20Section: View {
 }
 
 struct LiveSection: View {
+    let liveShows: [LiveShow]
+
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("실시간 인기 LIVE")
-                .font(.headline)
-                .foregroundColor(.white)
-                .padding(.horizontal)
+            HStack {
+                Text("실시간 인기 LIVE")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                Spacer()
+                Text("더보기")
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
+            }
+            .padding(.horizontal)
 
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 16) {
-                    ForEach(0..<3) { index in
-                        LiveRankingCell(
-                            rank: index + 1,
-                            channel: "JTBC",
-                            title: "이혼숙려캠프 34화",
-                            rating: "27.2%",
-                            image: Image(systemName: "photo") 
-                        )
-                        .frame(width: 300)
+                    ForEach(liveShows) { show in
+                        LiveRankingCell(show: show)
                     }
                 }
                 .padding(.horizontal)
@@ -84,10 +86,9 @@ struct LiveSection: View {
     }
 }
 
+
 struct MovieSection: View {
-    let movies: [Image] = [
-        Image(systemName: "photo"), Image(systemName: "photo"), Image(systemName: "photo")
-    ]
+    let movies: [Movie]
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -98,8 +99,8 @@ struct MovieSection: View {
 
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 12) {
-                    ForEach(0..<movies.count, id: \.self) { index in
-                        MoviePosterCell(image: movies[index])
+                    ForEach(movies) { movie in
+                        LongImgaeCell(movie: movie)
                     }
                 }
                 .padding(.horizontal)
@@ -108,9 +109,8 @@ struct MovieSection: View {
     }
 }
 
-
 struct TeamLogoSection: View {
-    let teamLogos = ["doosan", "kia", "lg", "samsung", "ssg"]
+    let teamLogos = ["dosan", "kia", "lg", "samsung", "dosan", "kia", "lg", "samsung"]
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -127,13 +127,13 @@ struct TeamLogoSection: View {
 }
 
 struct LogoSection: View {
-    let logos = ["applelogo", "tv", "play.rectangle", "sportscourt", "soccerball"]
+    let logos = ["afc", "appleTV", "kbl", "kbo"]
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 16) {
-                ForEach(logos, id: \.self) { systemName in
-                    LogoCell(logo: Image(systemName: systemName))
+            HStack(spacing: 7) {
+                ForEach(logos, id: \.self) { imageName in
+                    LogoCell(logo: Image(imageName))
                 }
             }
             .padding(.horizontal)
@@ -141,22 +141,20 @@ struct LogoSection: View {
     }
 }
 
+struct RecommandSection: View {
+    let shows: [RecommendedShow]
 
-struct PdPickSection: View {
     var body: some View {
         VStack(alignment: .leading) {
-            Text("감각적인 PD의 인생작 TOP 5")
+            Text("현주의 인생작 TOP 5")
                 .font(.headline)
                 .foregroundColor(.white)
                 .padding(.horizontal)
 
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack {
-                    ForEach(0..<3) { _ in
-                        Rectangle()
-                            .fill(Color.gray)
-                            .frame(width: 160, height: 100)
-                            .cornerRadius(8)
+                HStack(spacing: 12) {
+                    ForEach(shows) { show in
+                        RecommendedShowCell(show: show)
                     }
                 }
                 .padding(.horizontal)
@@ -164,6 +162,7 @@ struct PdPickSection: View {
         }
     }
 }
+
 
 #Preview {
     HomeView()

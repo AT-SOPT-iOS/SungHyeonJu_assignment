@@ -15,10 +15,11 @@
 		E50BE14A2DEEB17E00546030 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50BE1492DEEB17E00546030 /* NavigationBar.swift */; };
 		E50BE14D2DEEB22100546030 /* LogoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50BE14C2DEEB22100546030 /* LogoCell.swift */; };
 		E50BE14F2DEEB2D300546030 /* TeamLogoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50BE14E2DEEB2D300546030 /* TeamLogoCell.swift */; };
-		E50BE1512DEEB4DC00546030 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50BE1502DEEB4DC00546030 /* MovieCell.swift */; };
+		E50BE1512DEEB4DC00546030 /* LongImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50BE1502DEEB4DC00546030 /* LongImageCell.swift */; };
 		E50BE1532DEEB5C000546030 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50BE1522DEEB5C000546030 /* MainView.swift */; };
 		E50BE1552DEEB5D600546030 /* CategoryTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50BE1542DEEB5D600546030 /* CategoryTab.swift */; };
 		E50BE1572DEEB7F100546030 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E50BE1562DEEB7F100546030 /* Assets.xcassets */; };
+		E50BE15B2DEEBFFF00546030 /* RecommendShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50BE15A2DEEBFFF00546030 /* RecommendShowCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,10 +32,11 @@
 		E50BE1492DEEB17E00546030 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		E50BE14C2DEEB22100546030 /* LogoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoCell.swift; sourceTree = "<group>"; };
 		E50BE14E2DEEB2D300546030 /* TeamLogoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamLogoCell.swift; sourceTree = "<group>"; };
-		E50BE1502DEEB4DC00546030 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		E50BE1502DEEB4DC00546030 /* LongImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongImageCell.swift; sourceTree = "<group>"; };
 		E50BE1522DEEB5C000546030 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E50BE1542DEEB5D600546030 /* CategoryTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTab.swift; sourceTree = "<group>"; };
 		E50BE1562DEEB7F100546030 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E50BE15A2DEEBFFF00546030 /* RecommendShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendShowCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +87,8 @@
 				E50BE1472DEEB12600546030 /* RankingPosterCell.swift */,
 				E50BE14C2DEEB22100546030 /* LogoCell.swift */,
 				E50BE14E2DEEB2D300546030 /* TeamLogoCell.swift */,
-				E50BE1502DEEB4DC00546030 /* MovieCell.swift */,
+				E50BE1502DEEB4DC00546030 /* LongImageCell.swift */,
+				E50BE15A2DEEBFFF00546030 /* RecommendShowCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -181,9 +184,10 @@
 			files = (
 				E50BE1482DEEB12600546030 /* RankingPosterCell.swift in Sources */,
 				E50BE1462DEEB0F100546030 /* HomeModel.swift in Sources */,
-				E50BE1512DEEB4DC00546030 /* MovieCell.swift in Sources */,
+				E50BE1512DEEB4DC00546030 /* LongImageCell.swift in Sources */,
 				E50BE1532DEEB5C000546030 /* MainView.swift in Sources */,
 				E50BE1432DEEB08600546030 /* LiveRankingCell.swift in Sources */,
+				E50BE15B2DEEBFFF00546030 /* RecommendShowCell.swift in Sources */,
 				E50BE13F2DEEAE1D00546030 /* HomeView.swift in Sources */,
 				E50BE14D2DEEB22100546030 /* LogoCell.swift in Sources */,
 				E50BE14F2DEEB2D300546030 /* TeamLogoCell.swift in Sources */,

@@ -19,8 +19,16 @@ struct TeamLogoCell: View {
             image
                 .resizable()
                 .scaledToFit()
-                .padding(12)
+                .frame(width: 50, height: 50)
         }
     }
 }
+
+#Preview {
+    HStack(spacing: 0) {
+        TeamLogoCell(image: Image("kia"), isEven: true)
+        TeamLogoCell(image: Image("lg"), isEven: false)
+    }
+}
+
 

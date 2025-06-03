@@ -12,14 +12,14 @@ struct LogoCell: View {
 
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 12)
+            RoundedRectangle(cornerRadius: 4)
                 .fill(Color(red: 0.12, green: 0.12, blue: 0.12))
-                .frame(width: 100, height: 50)
+                .frame(width: 90, height: 45)
 
             logo
                 .resizable()
                 .scaledToFit()
-                .frame(height: 24)
+                .frame(height: 34)
                 .foregroundColor(.white)
         }
     }

@@ -1,5 +1,5 @@
 //
-//  MovieCell.swift
+//  RecommendShowCell.swift
 //  Tving_Clone_SwiftUI
 //
 //  Created by 성현주 on 6/3/25.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct MoviePosterCell: View {
-    let image: Image
+struct RecommendedShowCell: View {
+    let show: RecommendedShow
 
     var body: some View {
-        image
+        Image(show.imageName)
             .resizable()
             .scaledToFill()
-            .frame(width: 120, height: 180)
+            .frame(width: 160, height: 100)
             .clipped()
             .cornerRadius(8)
     }

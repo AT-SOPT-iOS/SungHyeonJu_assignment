@@ -10,10 +10,10 @@ import SwiftUI
 struct NavigationBar: View {
     var body: some View {
         HStack {
-            Image(systemName: "photo")
+            Image("tving")
                 .resizable()
                 .scaledToFit()
-                .frame(height: 28)
+                .frame(height: 78)
 
             Spacer()
 
@@ -21,19 +21,26 @@ struct NavigationBar: View {
                 print("검색 버튼 탭됨")
             }) {
                 Image(systemName: "magnifyingglass")
-                    .foregroundColor(.white)
+                                   .foregroundColor(.white)
+                                   .frame(width: 30, height: 30)
             }
             .padding(.trailing, 12)
 
             Button(action: {
                 print("장바구니 버튼 탭됨")
             }) {
-                Image(systemName: "cart")
-                    .foregroundColor(.white)
+                Image("tvingIcon")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 40, height: 30)
             }
         }
-        .padding(.horizontal)
-        .padding(.top, 8)
+        .frame(height: 44)
+        .background(Color.black)
     }
+}
+
+#Preview {
+    NavigationBar()
 }
 
