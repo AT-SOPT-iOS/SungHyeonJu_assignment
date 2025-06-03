@@ -24,3 +24,7 @@ struct LogoCell: View {
         }
     }
 }
+
+#Preview {
+    LogoCell(logo: Image("kbo"))
+}

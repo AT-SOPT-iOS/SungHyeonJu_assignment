@@ -19,3 +19,7 @@ struct RecommendedShowCell: View {
             .cornerRadius(8)
     }
 }
+
+#Preview {
+    RecommendedShowCell(show: RecommendedShow.sampleData[0])
+}

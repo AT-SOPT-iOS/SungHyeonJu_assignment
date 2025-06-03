@@ -20,3 +20,6 @@ struct LongImgaeCell: View {
     }
 }
 
+#Preview {
+    LongImgaeCell(movie: Movie.sampleMovies[0])
+}

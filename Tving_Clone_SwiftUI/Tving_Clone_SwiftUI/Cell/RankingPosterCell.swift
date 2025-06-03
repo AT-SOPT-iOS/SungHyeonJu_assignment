@@ -27,3 +27,8 @@ struct RankingPosterCell: View {
         }
     }
 }
+
+#Preview {
+    RankingPosterCell(rank: 1, image: Image("signal"))
+        .background(Color.black)
+}
