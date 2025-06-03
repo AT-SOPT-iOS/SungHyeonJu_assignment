@@ -42,6 +42,7 @@ struct LiveRankingCell: View {
         }
     }
 }
+
 #Preview {
     LiveRankingCell(show: LiveShow.sampleData[0])
         .background(Color.black)

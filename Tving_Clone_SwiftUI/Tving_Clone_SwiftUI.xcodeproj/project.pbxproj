@@ -20,6 +20,13 @@
 		E50BE1552DEEB5D600546030 /* CategoryTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50BE1542DEEB5D600546030 /* CategoryTab.swift */; };
 		E50BE1572DEEB7F100546030 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E50BE1562DEEB7F100546030 /* Assets.xcassets */; };
 		E50BE15B2DEEBFFF00546030 /* RecommendShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50BE15A2DEEBFFF00546030 /* RecommendShowCell.swift */; };
+		E50BE15F2DEEC63500546030 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50BE15E2DEEC63500546030 /* HomeViewModel.swift */; };
+		E50BE1622DEEC6A500546030 /* Top20Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50BE1612DEEC6A500546030 /* Top20Section.swift */; };
+		E50BE1642DEEC6CE00546030 /* LiveSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50BE1632DEEC6CE00546030 /* LiveSection.swift */; };
+		E50BE1662DEEC6E900546030 /* MovieSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50BE1652DEEC6E900546030 /* MovieSection.swift */; };
+		E50BE1682DEEC71600546030 /* TeamLogoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50BE1672DEEC71600546030 /* TeamLogoSection.swift */; };
+		E50BE16A2DEEC73500546030 /* LogoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50BE1692DEEC73500546030 /* LogoSection.swift */; };
+		E50BE16C2DEEC75700546030 /* RecommandSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50BE16B2DEEC75700546030 /* RecommandSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +44,13 @@
 		E50BE1542DEEB5D600546030 /* CategoryTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTab.swift; sourceTree = "<group>"; };
 		E50BE1562DEEB7F100546030 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E50BE15A2DEEBFFF00546030 /* RecommendShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendShowCell.swift; sourceTree = "<group>"; };
+		E50BE15E2DEEC63500546030 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		E50BE1612DEEC6A500546030 /* Top20Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top20Section.swift; sourceTree = "<group>"; };
+		E50BE1632DEEC6CE00546030 /* LiveSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveSection.swift; sourceTree = "<group>"; };
+		E50BE1652DEEC6E900546030 /* MovieSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSection.swift; sourceTree = "<group>"; };
+		E50BE1672DEEC71600546030 /* TeamLogoSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamLogoSection.swift; sourceTree = "<group>"; };
+		E50BE1692DEEC73500546030 /* LogoSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoSection.swift; sourceTree = "<group>"; };
+		E50BE16B2DEEC75700546030 /* RecommandSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,12 +83,11 @@
 		E50BE13D2DEEAE1D00546030 /* Tving_Clone_SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				E50BE15D2DEEC61D00546030 /* ViewModel */,
+				E50BE15C2DEEC61600546030 /* View */,
 				E50BE14B2DEEB1FB00546030 /* Components */,
 				E50BE1442DEEB0E400546030 /* Model */,
-				E50BE1412DEEB05C00546030 /* Cell */,
 				E50BE1562DEEB7F100546030 /* Assets.xcassets */,
-				E50BE13B2DEEAE1D00546030 /* HomeView.swift */,
-				E50BE1522DEEB5C000546030 /* MainView.swift */,
 				E50BE13C2DEEAE1D00546030 /* Tving_Clone_SwiftUIApp.swift */,
 			);
 			path = Tving_Clone_SwiftUI;
@@ -108,6 +121,38 @@
 				E50BE1542DEEB5D600546030 /* CategoryTab.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		E50BE15C2DEEC61600546030 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E50BE1412DEEB05C00546030 /* Cell */,
+				E50BE1602DEEC66A00546030 /* Section */,
+				E50BE13B2DEEAE1D00546030 /* HomeView.swift */,
+				E50BE1522DEEB5C000546030 /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E50BE15D2DEEC61D00546030 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E50BE15E2DEEC63500546030 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E50BE1602DEEC66A00546030 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				E50BE1612DEEC6A500546030 /* Top20Section.swift */,
+				E50BE1632DEEC6CE00546030 /* LiveSection.swift */,
+				E50BE1652DEEC6E900546030 /* MovieSection.swift */,
+				E50BE1672DEEC71600546030 /* TeamLogoSection.swift */,
+				E50BE1692DEEC73500546030 /* LogoSection.swift */,
+				E50BE16B2DEEC75700546030 /* RecommandSection.swift */,
+			);
+			path = Section;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,16 +228,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				E50BE1482DEEB12600546030 /* RankingPosterCell.swift in Sources */,
+				E50BE1642DEEC6CE00546030 /* LiveSection.swift in Sources */,
+				E50BE1662DEEC6E900546030 /* MovieSection.swift in Sources */,
 				E50BE1462DEEB0F100546030 /* HomeModel.swift in Sources */,
 				E50BE1512DEEB4DC00546030 /* LongImageCell.swift in Sources */,
 				E50BE1532DEEB5C000546030 /* MainView.swift in Sources */,
 				E50BE1432DEEB08600546030 /* LiveRankingCell.swift in Sources */,
+				E50BE1622DEEC6A500546030 /* Top20Section.swift in Sources */,
+				E50BE16A2DEEC73500546030 /* LogoSection.swift in Sources */,
 				E50BE15B2DEEBFFF00546030 /* RecommendShowCell.swift in Sources */,
 				E50BE13F2DEEAE1D00546030 /* HomeView.swift in Sources */,
 				E50BE14D2DEEB22100546030 /* LogoCell.swift in Sources */,
+				E50BE15F2DEEC63500546030 /* HomeViewModel.swift in Sources */,
 				E50BE14F2DEEB2D300546030 /* TeamLogoCell.swift in Sources */,
 				E50BE1552DEEB5D600546030 /* CategoryTab.swift in Sources */,
 				E50BE1402DEEAE1D00546030 /* Tving_Clone_SwiftUIApp.swift in Sources */,
+				E50BE1682DEEC71600546030 /* TeamLogoSection.swift in Sources */,
+				E50BE16C2DEEC75700546030 /* RecommandSection.swift in Sources */,
 				E50BE14A2DEEB17E00546030 /* NavigationBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
